@@ -1,0 +1,50 @@
+import { PortfolioItem } from "@/types/project";
+
+export const certificates: PortfolioItem[] = [
+  {
+    id: 201,
+    title: "Top 10 Finalist Healtech UI/UX Competition 2025",
+    description: "Berhasil membawa tim masuk Top 10 nasional dalam kompetisi desain UI/UX Healtech sebagai Team Leader.",
+    image: "/certificates/healtech.jpg",
+    tags: ["UI/UX", "Leadership", "Design Thinking"],
+    link: "#",
+    type: "certificate",
+    imageTone: "light",
+  },
+  {
+    id: 202,
+    title: "Frontend Web Development Certification",
+    description: "Sertifikasi dasar hingga menengah dalam pengembangan frontend modern.",
+    image: "/certificates/frontend.jpg",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "#",
+    type: "certificate",
+  },
+  {
+    id: 203,
+    title: "JavaScript Algorithms & Data Structures",
+    description: "Menyelesaikan pelatihan algoritma dan struktur data berbasis JavaScript.",
+    image: "/certificates/js.jpg",
+    tags: ["JavaScript", "DSA"],
+    link: "#",
+    type: "certificate",
+  },
+  {
+    id: 204,
+    title: "UI Design Fundamentals",
+    description: "Pemahaman dasar tentang layout, typography, dan visual hierarchy.",
+    image: "/certificates/ui.jpg",
+    tags: ["UI Design", "Figma"],
+    link: "#",
+    type: "certificate",
+  },
+  {
+    id: 205,
+    title: "Version Control with Git",
+    description: "Menguasai Git untuk kolaborasi dan manajemen versioning project.",
+    image: "/certificates/git.jpg",
+    tags: ["Git", "GitHub"],
+    link: "#",
+    type: "certificate",
+  },
+];
