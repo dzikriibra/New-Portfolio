@@ -9,9 +9,8 @@ interface BasicCardProps extends PortfolioItem {
   isSelected?: boolean;
 }
 
-export const BasicCard = ({ title, description, image, tags, link, type, imageTone, isSelected }: BasicCardProps) => {
+export const BasicCard = ({ title, description, coverImage, tags, link, type, isSelected }: BasicCardProps) => {
   const isProject = type === "project";
-  const isLightImage = imageTone === "light";
 
   return (
     <div
@@ -19,7 +18,7 @@ export const BasicCard = ({ title, description, image, tags, link, type, imageTo
       ${isSelected ? "scale-105 border-accent/50 z-10" : "scale-95 opacity-60"}`}
     >
       {/* Image */}
-      <Image src={image} alt={title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+      <Image src={coverImage} alt={title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
 
       {/* Label */}
       <div className="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
@@ -31,7 +30,7 @@ export const BasicCard = ({ title, description, image, tags, link, type, imageTo
           {!isProject && <Award size={10} />}
         </span>
 
-        <h4 className={`font-bold text-xl ${isLightImage ? "text-black" : "text-white"} drop-shadow-md`}>{title}</h4>
+        <h4 className={`font-bold text-xl drop-shadow-md`}>{title}</h4>
       </div>
 
       {/* Overlay */}

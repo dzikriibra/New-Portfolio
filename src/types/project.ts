@@ -4,9 +4,15 @@ export interface PortfolioItem {
   id: number;
   title: string;
   description: string;
-  image: string;
+  coverImage: string;
   tags: string[];
   link: string;
   type: ItemType;
-  imageTone?: "light" | "dark";
+  publisher?: string;
+  status?: string;
+  // new type
+  challenge?: string;
+  strategy?: string;
+  documentationSrc?: string[];
+  credentialSrc?: string[];
 }
