@@ -43,7 +43,7 @@ export default function HomeSection() {
       <CursorSpotlight />
 
       {/* DARK OVERLAY */}
-      <div className="absolute inset-0 z-10 bg-primary-bg/70" />
+      <div className="absolute inset-0 z-10 bg-primary-bg/10" />
 
       {/* MAIN CONTENT */}
       <div className="container relative z-20 mx-auto flex-1 flex items-center justify-center">
