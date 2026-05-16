@@ -49,7 +49,7 @@ export default function PortofolioSection() {
       <section className="min-h-screen bg-primary-bg py-15 text-white">
         <div className="container mx-auto px-4 min-h-375">
           <div className="flex flex-col items-center mb-10 relative">
-            <h1 className="text-4xl md:text-5xl font-bold font-headline text-center">Selected Works & Learning Journey</h1>
+            <h1 className="text-3xl md:text-5xl font-bold font-headline text-center">Selected Projects & Learning Journey</h1>
             <p className="text-description-text mt-4 text-center max-w-3xl">Exploring the intersection of logic and design through personal projects, client collaborations, and continuous skill upgrading.</p>
           </div>
 

@@ -42,7 +42,7 @@ export const ActionMode = ({ item }: { item: any }) => {
               [STATUS]: <span className="text-amber-500/80 italic">Awaiting_Digital_Archive</span>
             </p>
             <p>[INFO]: Dokumen sedang dalam proses validasi sistem.</p>
-            <p>[NOTE]: Silakan gunakan tombol "Verify" untuk tautan resmi.</p>
+            <p>[NOTE]: Tombol "Verify" akan aktif otomatis setelah dokumen diarsip.</p>
           </div>
 
           <motion.div animate={{ opacity: [0, 1, 0] }} transition={{ duration: 1, repeat: Infinity }} className="w-2 h-4 bg-cyan-400/40 mt-2" />

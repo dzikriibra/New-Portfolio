@@ -35,7 +35,7 @@ export const HighlightCard = ({ onOpenModal }: HighlightCardProps) => {
         {/* Sisi Deskripsi (Di mobile numpuk di atas foto, di desktop di samping) */}
         <div className="relative z-10 flex-1 p-8 lg:p-12 flex flex-col justify-center">
           {/* Title - Mobile: Center, Desktop: Left */}
-          <h3 className="text-white text-2xl lg:text-2xl font-bold mb-6 lg:mb-3 text-center lg:text-left leading-tight">{project.title}</h3>
+          <h3 className="text-white text-2xl lg:text-2xl font-bold mb-6 lg:mb-5 text-center lg:text-left leading-tight">{project.title}</h3>
 
           <div className="relative mb-6 lg:mb-8">
             {/* Box Deskripsi - Mobile: Background Transparan, Desktop: Box Melayang */}
@@ -56,11 +56,11 @@ export const HighlightCard = ({ onOpenModal }: HighlightCardProps) => {
           {/* Buttons - Mobile: Stack/Center, Desktop: Row/Left */}
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
             <BaseButton onClick={() => onOpenModal(project, "action")} variant="primary" size="md" className="w-full sm:w-auto">
-              View Project <Eye size={14} />
+              View Project <Eye size={16} />
             </BaseButton>
 
             <BaseButton onClick={() => onOpenModal(project, "detail")} variant="outline" size="md" className="w-full sm:w-auto">
-              Detail <ExternalLink size={14} />
+              Detail <ExternalLink size={16} />
             </BaseButton>
           </div>
         </div>
