@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 
 export default function CursorSpotlight() {
@@ -32,7 +31,7 @@ export default function CursorSpotlight() {
             circle 220px at ${position.x}px ${position.y}px,
             transparent 0%,
             rgba(0,0,0,0.15) 50%,
-            rgba(0,0,0,0.65) 100%
+            rgba(0,0,0,0.90) 100%
           )
         `,
         transition: "background 0.05s linear",
