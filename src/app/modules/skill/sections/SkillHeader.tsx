@@ -7,12 +7,11 @@ export const SkillHeader = () => {
       <div className="relative pl-8 border-l-4 border-accent/40">
         <h2 className="text-3xl md:text-6xl lg:text-8xl font-bold text-center lg:text-left text-white leading-tight font-headline">
           Defining My <br />
-          <span className="text-accent ">Technical Skillset</span>
+          <span className="text-accent ">Technical Foundation</span>
         </h2>
       </div>
       <p className="max-w-lg text-description-text text-md md:text-xl text-center lg:text-left font-body leading-relaxed">
-        The frameworks, languages, and leadership principles that form
-        <span className="text-accent font-semibold"> the foundation of my professional work.</span>
+        A combination of technical tools, design thinking, and collaborative skills<span className="text-accent font-semibold"> that support how I build products.</span>
       </p>
     </motion.div>
   );
