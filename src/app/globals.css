@@ -6,7 +6,7 @@
   --color-card-bg: #1e293b; /* 30% Card Project */
   --color-accent: #6366f1; /* 10% Interaksi/Indigo */
 
-  /* Font dari main.png lo */
+  /* Font main */
   --font-headline: var(--font-jakarta);
   --font-body: var(--font-inter);
 }
@@ -37,20 +37,25 @@
   }
 }
 
-/* scrollbar */
+/* Desc text */
+.text-description-text {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* Custom scrollbar */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 5px; /* Bikin tipis banget */
+  width: 4px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent; /* Track-nya bening aja */
+  background: transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1); /* Warna putih transparan */
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2); /* Pas di-hover agak terang dikit */
+  background: rgba(255, 255, 255, 0.22);
 }
