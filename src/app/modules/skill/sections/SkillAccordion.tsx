@@ -1,36 +1,3 @@
-// "use client";
-// import { useState } from "react";
-// import SkillAccordionItem from "./SkillAccordionItem";
-// import SkillDetailPanel from "./SkillDetailPanel";
-// import { skillCategories } from "../data/skillset";
-
-// export default function SkillAccordion() {
-//   const [activeId, setActiveId] = useState(1);
-
-//   const activeItem = skillCategories.find((item) => item.id === activeId) || skillCategories[0];
-
-//   return (
-//     <div
-//       className="
-//         mx-auto grid w-full max-w-7xl
-//         grid-cols-1 gap-10
-//         lg:grid-cols-[0.9fr_1.1fr]
-//         lg:items-start
-//       "
-//     >
-//       {/* LEFT */}
-//       <div className="space-y-2">
-//         {skillCategories.map((item) => (
-//           <SkillAccordionItem key={item.id} item={item} active={activeId === item.id} onClick={() => setActiveId(item.id)} />
-//         ))}
-//       </div>
-
-//       {/* RIGHT */}
-//       <SkillDetailPanel item={activeItem} />
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useState } from "react";
