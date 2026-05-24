@@ -1,24 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Marquee from "@/components/ui/marquee/Marquee";
 import { SkillHeader } from "./sections/SkillHeader";
-import { SkillCarousel } from "./sections/SkillCarousel";
+import SkillAccordion from "./sections/SkillAccordion";
 
 export default function SkillSection() {
   const softSkillMarqueeItems = ["GOOD COMMUNICATION", "TEAM COLLABORATION", "LEADERSHIP", "PROBLEM SOLVING", "CRITICAL THINKING", "ATTENTION TO DETAIL", "ADAPTIVE LEARNING", "TIME MANAGEMENT"];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
-    <section id="skill" className="relative w-full bg-primary-bg pt-16 pb-25 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 my-2">
-        <div className="flex flex-col lg:flex-row items-center gap-3 md:gap-6 lg:gap-16">
+    <section
+      id="skill"
+      className="
+        relative flex min-h-screen w-full flex-col
+        overflow-hidden bg-primary-bg
+        pt-14
+      "
+    >
+      {/* CONTENT */}
+      <div className="container mx-auto flex-1 px-4 md:px-6">
+        <div className="flex flex-col gap-10">
           <SkillHeader />
-          <SkillCarousel activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+          <SkillAccordion />
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary-bg via-primary-bg/80 to-transparent">
+      {/* MARQUEE */}
+      <div className="relative mt-20 w-full">
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-bg via-primary-bg/70 to-transparent pointer-events-none" />
+
         <Marquee items={softSkillMarqueeItems} />
       </div>
     </section>
