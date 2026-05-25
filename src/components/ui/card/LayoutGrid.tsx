@@ -1,36 +1,3 @@
-// "use client";
-// import React from "react";
-// import { motion } from "framer-motion";
-// import { cn } from "@/lib/utils";
-// import Image from "next/image";
-
-// type Card = {
-//   id: number;
-//   content: React.ReactNode;
-//   className: string;
-//   thumbnail: string;
-// };
-
-// export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
-//   return (
-//     <div className="w-full h-full grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
-//       {cards.map((card, i) => (
-//         <div key={i} className={cn(card.className, "relative group min-h-87.5")}>
-//           <motion.div className={cn(card.className, "relative overflow-hidden bg-white rounded-xl h-full w-full border border-white/5")}>
-//             {/* Thumbnail */}
-//             <Image src={card.thumbnail} fill alt="thumbnail" className="object-cover object-center transition-transform duration-700 group-hover:scale-110" />
-
-//             {/* Overlay (Muncul Pas Hover) */}
-//             <div className="absolute inset-0 z-10 flex flex-col justify-end bg-gradient-to-t from-black via-black/80 to-transparent p-6 opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
-//               {card.content}
-//             </div>
-//           </motion.div>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
 "use client";
 import React from "react";
 import { motion, Variants } from "framer-motion";

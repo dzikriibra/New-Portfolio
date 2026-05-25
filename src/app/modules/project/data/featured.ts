@@ -3,9 +3,9 @@ import { PortfolioItem } from "@/types/project";
 export const featured: PortfolioItem[] = [
   {
     id: 1,
-    title: "Centralized Textile Operations Dashboard",
+    title: "Centralized Manufacturing Operations System",
     description:
-      "Sistem otomatisasi operasional untuk mendigitalisasi alur kerja konvensional pada industri manufaktur tekstil. Mengintegrasikan manajemen bahan baku, pelacakan progres order antar divisi secara real-time, hingga monitoring performa karyawan dalam satu dashboard terpusat guna mengeliminasi miskomunikasi dan birokrasi manual.",
+      "An operational automation system designed to digitize conventional workflows within the textile manufacturing industry. Integrates raw material management, real-time cross-division order tracking, and employee performance monitoring into a centralized dashboard to reduce miscommunication and manual bureaucracy.",
     coverImage: "/cover/featured/sublim.jpg",
     tags: ["React", "Strapi", "MySQL", "Tailwind", "Ant Design", "Typescript"],
     link: "#",
@@ -15,7 +15,7 @@ export const featured: PortfolioItem[] = [
     id: 2,
     title: "Smart Agriculture Predictive Dashboard",
     description:
-      "Sistem informasi berbasis web untuk memprediksi hasil produksi panen padi menggunakan algoritma Machine Learning. Mengintegrasikan visualisasi data riset prediktif yang kompleks ke dalam dashboard interface yang intuitif, clear, dan structured bagi pengguna.",
+      "A web-based information system developed to predict rice harvest production using Machine Learning algorithms. Integrates complex predictive research data into an intuitive, clear, and structured dashboard interface for end users.",
     coverImage: "/cover/featured/rice-prediction.jpg",
     tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "Machine Learning"],
     link: "#",
@@ -25,7 +25,7 @@ export const featured: PortfolioItem[] = [
     id: 3,
     title: "Automated Global Signal Filtering System",
     description:
-      "Sistem mitigasi informasi yang menyaring 'noise' berita global menggunakan AI layer berbasis analisa dampak. Sistem ini mendeteksi, merangkum, dan mengirimkan peristiwa dunia apa pun yang memiliki efek domino terhadap stabilitas ekonomi, keputusan karier, dan kehidupan personal langsung ke channel komunikasi privat.",
+      "An AI-powered information mitigation system designed to filter global news 'noise' through impact-based analysis. The system detects, summarizes, and delivers world events that may create domino effects on economic stability, career decisions, and personal life directly to private communication channels.",
     coverImage: "/cover/featured/global-signal.jpg",
     tags: ["TypeScript", "Next.js", "Strapi", "OpenAI API", "Telegram Bot API"],
     link: "#",

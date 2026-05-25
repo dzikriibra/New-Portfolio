@@ -47,7 +47,7 @@ export const projects: PortfolioItem[] = [
     id: 5,
     title: "Personal GeoMemo v1 (WMaps)",
     description:
-      "Peta interaktif pribadi untuk mencatat, menyimpan, dan menjelajahi kembali momen perjalanan seru kamu. Dilengkapi fitur pencarian lokasi, penanda riwayat destinasi (History), dan navigasi pintar untuk mengabadikan setiap tempat bersejarah yang pernah kamu kunjungi.",
+      "A personal interactive map designed to record, save, and revisit memorable travel experiences. Features location search, destination history markers, and smart navigation to preserve every meaningful place you’ve visited.",
     coverImage: "/cover/projects/geomemo.jpg",
     tags: ["JavaScript", "Leaflet.js", "Bootstrap 5", "HTML5", "CSS3"],
     link: "https://wheatstone-maps.vercel.app/",

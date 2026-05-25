@@ -4,7 +4,8 @@ export const certificates: PortfolioItem[] = [
   {
     id: 201,
     title: "Top 10 Finalist Healtech UI/UX Design Challenge Competition 2025",
-    description: "Berhasil membawa tim masuk Top 10 nasional dalam kompetisi desain UI/UX Healtech sebagai Team Leader.",
+    description:
+      "Led a multidisciplinary team to achieve a Top 10 national finalist position in the Healtech UI/UX Design Competition. Contributed through design direction, team coordination, and problem-solving processes focused on building user-centered digital healthcare solutions.",
     coverImage: "/cover/certificates/healthfy.png",
     tags: ["UI/UX", "Leadership", "Design Thinking", "Problem Solving", "Time Management", "Attention to Detail", "Critical Thinking"],
     link: "#",
@@ -12,32 +13,36 @@ export const certificates: PortfolioItem[] = [
     credentialSrc: ["/docs/certs/finalist-healtech.png"],
     publisher: "AOEN",
   },
+
   {
     id: 202,
-    title: "Belajar Dasar Manajemen Proyek",
-    description: "Pemahaman fundamental siklus hidup manajemen proyek (*Project Life Cycle*). Mempelajari metodologi Agile dan Scrum, inisiasi proyek, estimasi resources, serta manajemen risiko teknis.",
+    title: "Fundamentals of Project Management",
+    description:
+      "Built foundational knowledge in project lifecycle management, Agile methodologies, Scrum workflows, resource estimation, and technical risk analysis. Strengthened the ability to organize structured development processes and collaborative execution.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["Project Management", "Agile", "Scrum Method", "Risk Analysis"],
     link: "#",
-    // credentialSrc: ["/docs/certs/dasar-manajement-proyek.png"],
     publisher: "Dicoding",
     type: "certificate",
   },
+
   {
     id: 203,
     title: "UI Design Fundamentals",
-    description: "Pemahaman dasar tentang layout, typography, dan visual hierarchy.",
+    description: "Developed a strong understanding of layout composition, typography, spacing, and visual hierarchy principles to create cleaner, more intuitive, and user-focused interface designs.",
     coverImage: "/cover/certificates/specskill.png",
-    tags: ["UI Design", "Figma"],
+    tags: ["UI Design", "Typography", "Visual Hierarchy", "Layout Composition", "Spacing System", "Design Principles", "User Interface", "Figma"],
     link: "#",
     credentialSrc: ["/docs/certs/ui-design.png"],
     publisher: "Special Skill",
     type: "certificate",
   },
+
   {
     id: 204,
     title: "Badan Ekraf Developer Day 2025",
-    description: "Berpartisipasi aktif dalam sesi teknis mengenai ekosistem pengembangan aplikasi, game, dan teknologi web terbaru guna meningkatkan kompetensi industri digital.",
+    description:
+      "Participated in technical discussions and industry-sharing sessions covering modern web technologies, application ecosystems, and digital product development trends to broaden practical insight into the evolving tech industry.",
     coverImage: "/cover/certificates/bdd.png",
     tags: ["Industry Insight", "Developer Ecosystem", "Tech Conference"],
     publisher: "Dicoding x Badan Ekraf Indonesia",
@@ -48,8 +53,8 @@ export const certificates: PortfolioItem[] = [
 
   {
     id: 205,
-    title: "Belajar Dasar Pemrograman Web",
-    description: "Sertifikasi dasar hingga menengah dalam pengembangan frontend modern.",
+    title: "Fundamentals of Web Programming",
+    description: "Strengthened core frontend development skills by learning modern web structure, semantic HTML, responsive styling, and interactive web fundamentals using HTML, CSS, and JavaScript.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "#",
@@ -60,8 +65,8 @@ export const certificates: PortfolioItem[] = [
 
   {
     id: 206,
-    title: "Belajar Dasar Pemrograman Javascript",
-    description: "Menyelesaikan pelatihan algoritma dan struktur data berbasis JavaScript.",
+    title: "Fundamentals of JavaScript Programming",
+    description: "Explored algorithmic thinking and fundamental data structure concepts using JavaScript while improving logical problem-solving and programming fundamentals for scalable web development.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["JavaScript", "DSA"],
     link: "#",
@@ -69,10 +74,11 @@ export const certificates: PortfolioItem[] = [
     publisher: "Dicoding",
     type: "certificate",
   },
+
   {
     id: 207,
-    title: "Belajar Membuat Front-End Web untuk Pemula",
-    description: "Sertifikasi kompetensi dasar pengembangan web fungsional yang mencakup manipulasi DOM, pemanfaatan Web Storage, serta implementasi standar React v18.",
+    title: "Front-End Web Development for Beginners",
+    description: "Learned how to build functional and interactive frontend applications through DOM manipulation, browser storage management, and modern React-based implementation practices.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["React v18", "JavaScript", "DOM Manipulation"],
     link: "#",
@@ -80,10 +86,11 @@ export const certificates: PortfolioItem[] = [
     publisher: "Dicoding",
     type: "certificate",
   },
+
   {
     id: 208,
-    title: "Belajar Membuat Aplikasi Web dengan React",
-    description: "Pelatihan pembuatan aplikasi web menggunakan library React. Fokus pada pemahaman konsep dasar Component, pengisian Props, pengelolaan State, serta penerapan teknik rendering yang efisien.",
+    title: "Building Web Applications with React",
+    description: "Developed practical understanding of React fundamentals including component architecture, props handling, state management, and efficient rendering patterns for modern frontend application development.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["React v19", "JavaScript", "Web Component", "State Management"],
     link: "#",
@@ -91,36 +98,36 @@ export const certificates: PortfolioItem[] = [
     publisher: "Dicoding",
     type: "certificate",
   },
+
   {
     id: 209,
-    title: "Belajar Fundamental Aplikasi Web dengan React",
-    description: "Sertifikasi tingkat lanjutan yang mendalami arsitektur React, sinkronisasi efek samping menggunakan Hooks (useEffect), pengelolaan global state, navigasi routing, hingga proses automated testing.",
+    title: "Fundamental Web Applications with React",
+    description: "Deepened knowledge of scalable React architecture by implementing Hooks, routing systems, global state management, side-effect synchronization, and automated testing workflows for production-ready applications.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["React Hooks", "Context API", "React Router", "Automated Testing"],
     link: "#",
-    // credentialSrc: ["/docs/certs/fundamental-apk-web-react.png"],
     publisher: "Dicoding",
     type: "certificate",
   },
+
   {
     id: 210,
-    title: "Belajar Back-End Pemula dengan JavaScript",
-    description: "Pelatihan dasar arsitektur Back-End menggunakan Node.js dan ekosistem JavaScript. Mempelajari konsep client-server, pembangunan RESTful API sederhana, serta penanganan HTTP routing.",
+    title: "Beginner Back-End Development with JavaScript",
+    description: "Learned the fundamentals of backend architecture using Node.js, including client-server communication, RESTful API development, HTTP routing, and foundational server-side programming concepts.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["Node.js", "JavaScript", "RESTful API", "Back-End Basics"],
     link: "#",
-    // credentialSrc: ["/docs/certs/backend-js-pemula.png"],
     publisher: "Dicoding",
     type: "certificate",
   },
+
   {
     id: 211,
-    title: "Belajar Fundamental Back-End dengan JavaScript",
-    description: "Sertifikasi tingkat lanjut pengembangan Back-End. Berfokus pada arsitektur server yang *scalable* menggunakan framework hapi, manajemen database persistensi, autentikasi user, hingga deployment aplikasi.",
+    title: "Fundamental Back-End Development with JavaScript",
+    description: "Expanded backend engineering capabilities by building scalable server architectures using Hapi, integrating persistent databases, implementing user authentication systems, and understanding deployment workflows.",
     coverImage: "/cover/certificates/dicoding.png",
     tags: ["Node.js", "Hapi Framework", "Database Integration", "User Authentication"],
     link: "#",
-    // credentialSrc: ["/docs/certs/fundamental-backend-js.png"],
     publisher: "Dicoding",
     type: "certificate",
   },

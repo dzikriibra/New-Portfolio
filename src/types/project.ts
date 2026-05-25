@@ -1,4 +1,5 @@
 export type ItemType = "project" | "certificate";
+export type ProjectStatus = "live" | "maintenance" | "private";
 
 export interface PortfolioItem {
   id: number;
@@ -6,13 +7,13 @@ export interface PortfolioItem {
   description: string;
   coverImage: string;
   tags: string[];
-  link: string;
   type: ItemType;
+  link?: string;
+  status?: ProjectStatus;
   publisher?: string;
-  status?: string;
-  // new type
-  challenge?: string;
-  strategy?: string;
-  documentationSrc?: string[];
   credentialSrc?: string[];
+  problem?: string;
+  solution?: string;
+  impact?: string;
+  documentationSrc?: string[];
 }
