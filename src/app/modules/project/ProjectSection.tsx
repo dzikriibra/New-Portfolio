@@ -121,12 +121,12 @@ export default function ProjectSection() {
       </section>
 
       {/* DETAIL MODAL */}
-      <GlassModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={activeContent?.title}>
+      <GlassModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={activeContent?.title} maxWidth="max-w-6xl" maxHeight="55vh">
         <PortfolioModal item={activeContent} />
       </GlassModal>
 
       {/* STATUS POPUP */}
-      <GlassModal isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} title={popupData?.title}>
+      <GlassModal isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} title={popupData?.title} maxWidth="max-w-2xl" maxHeight="70vh">
         <StatusPopup data={popupData} />
       </GlassModal>
     </>
