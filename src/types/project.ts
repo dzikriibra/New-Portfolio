@@ -8,12 +8,17 @@ export interface PortfolioItem {
   coverImage: string;
   tags: string[];
   type: ItemType;
+
   link?: string;
   status?: ProjectStatus;
-  publisher?: string;
-  credentialSrc?: string[];
+
   problem?: string;
   solution?: string;
   impact?: string;
   documentationSrc?: string[];
+
+  publisher?: string;
+  issuedDate?: string;
+  credentialId?: string;
+  credentialSrc?: string[];
 }
