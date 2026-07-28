@@ -25,6 +25,12 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
 
   if (!project) return null;
 
+  // SETUP LIMIT TAG TECH STACK
+  const tags = project.tags || [];
+  const MAX_TAGS = 6; // Jumlah maksimal tag yang ditampilkan langsung
+  const visibleTags = tags.slice(0, MAX_TAGS);
+  const hiddenTagsCount = tags.length - MAX_TAGS;
+
   return (
     <div className="relative mb-16 w-full lg:mb-24">
       {/* MAIN CONTAINER */}
@@ -81,7 +87,7 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             flex flex-1 flex-col
             justify-center
             p-8
-            lg:p-12
+            lg:p-10
           "
         >
           {/* TITLE */}
@@ -135,15 +141,15 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           <div
             className="
               mb-8 flex flex-wrap
-              justify-center gap-2
+              items-center justify-center gap-2
               lg:justify-start
             "
           >
-            {project.tags?.map((tag: string) => (
+            {visibleTags.map((tag: string) => (
               <span
                 key={tag}
                 className="
-                  rounded-full border
+                  whitespace-nowrap rounded-full border
                   border-accent/20
                   bg-accent/10
                   px-3 py-1
@@ -154,6 +160,22 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
                 {tag}
               </span>
             ))}
+
+            {/* TAG PLUS / COUNTER SISA */}
+            {hiddenTagsCount > 0 && (
+              <span
+                className="
+                  whitespace-nowrap rounded-full border
+                  border-white/10
+                  bg-white/5
+                  px-2.5 py-1
+                  text-[10px] font-semibold text-neutral-400
+                  md:text-xs
+                "
+              >
+                +{hiddenTagsCount}
+              </span>
+            )}
           </div>
 
           {/* ACTION BUTTONS */}

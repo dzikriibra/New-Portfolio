@@ -30,9 +30,9 @@ export const AboutContent = () => {
         </h3>
       </motion.div>
 
-      <motion.div variants={itemVariants} className="space-y-4 font-body text-description-text text-base md:text-lg leading-relaxed text-center lg:text-left">
+      <motion.div variants={itemVariants} className="space-y-3 font-body text-description-text text-base md:text-lg leading-relaxed text-center lg:text-left">
         <p>
-          I’m <span className="text-white font-semibold">Dzikri Ibrahim Wahhab</span>, a <span className="font-semibold text-accent">Frontend Developer</span> with a background in{" "}
+          I’m <span className="text-white font-semibold">Dzikri Ibrahim Wahhab</span>, a <span className="font-semibold text-accent">Frontend Web Developer</span> with a background in{" "}
           <span className="font-semibold text-accent">Informatics</span>.
         </p>
         <p>I bring clarity to complex ideas by understanding data flow, aligning requirements, and structuring solutions before execution.</p>

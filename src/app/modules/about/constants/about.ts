@@ -2,7 +2,7 @@ import { Code2, Globe, GraduationCap } from "lucide-react";
 
 export const ABOUT_DATA = {
   typeWriterItems: [" Clarity", " Structure", " Precision", " Consistency"],
-  profileImage: "/profile/my-picture.jpg",
+  profileImage: "/profile/picture.png",
   stats: [
     {
       label: "Years of Experience",

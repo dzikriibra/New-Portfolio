@@ -24,6 +24,7 @@ export const certificates: PortfolioItem[] = [
     type: "certificate",
     publisher: "Dicoding",
     issuedDate: "2026",
+    credentialSrc: ["/docs/certs/fundamental-management-project.png"],
   },
 
   {
@@ -96,7 +97,7 @@ export const certificates: PortfolioItem[] = [
     type: "certificate",
     publisher: "Dicoding",
     issuedDate: "2025",
-    credentialSrc: ["/docs/certs/apk-web-react.png"],
+    credentialSrc: ["/docs/certs/build-app-web-react.png"],
   },
 
   {
@@ -108,6 +109,7 @@ export const certificates: PortfolioItem[] = [
     type: "certificate",
     publisher: "Dicoding",
     issuedDate: "2025",
+    credentialSrc: ["/docs/certs/fundamental-web-app-react.png"],
   },
 
   {
@@ -119,6 +121,7 @@ export const certificates: PortfolioItem[] = [
     type: "certificate",
     publisher: "Dicoding",
     issuedDate: "2025",
+    credentialSrc: ["/docs/certs/bedev-with-js.png"],
   },
 
   {
@@ -130,5 +133,18 @@ export const certificates: PortfolioItem[] = [
     type: "certificate",
     publisher: "Dicoding",
     issuedDate: "2025",
+    credentialSrc: ["/docs/certs/fundamental-bedev-with-js.png"],
+  },
+
+  {
+    id: 212,
+    title: "Fundamental Git & GitHub for Developers",
+    description: "Mastered fundamental version control workflows, repository management, branching & merging strategies, conflict resolution, and team collaboration on GitHub following industry standards.",
+    coverImage: "/cover/certificates/dicoding.png",
+    tags: ["Git", "GitHub", "Version Control", "Branching & Merging", "Team Collaboration"],
+    type: "certificate",
+    publisher: "Dicoding",
+    issuedDate: "2025",
+    credentialSrc: ["/docs/certs/fundamental-git-github.png"],
   },
 ];
