@@ -13,7 +13,7 @@ export const AboutVisual = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="w-full lg:w-1/3 flex flex-col items-center justify-center"
     >
-      <h2 className="text-center font-headline text-xl md:text-3xl text-white mb-4 md:mb-6 lg:mb-8 tracking-tight">
+      <h2 className="text-center font-headline text-xl md:text-3xl text-white mb-4 md:mb-6 lg:mb-10 tracking-tight">
         The Person <span className="text-accent">Behind the Code</span>
       </h2>
 

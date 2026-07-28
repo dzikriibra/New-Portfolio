@@ -3,6 +3,36 @@ import { PortfolioItem } from "@/types/project";
 export const featured: PortfolioItem[] = [
   {
     id: 1,
+
+    title: "TreeHealthy – AI Health Planner",
+
+    description:
+      "An AI-driven health management platform that transforms Indonesia's national CERDIK guidelines into personalized, 7-day actionable health routines to prevent Non-Communicable Diseases (NCDs). Built on a decoupled architecture, it features dynamic ML risk scoring, RAG-backed medical explainers, and interactive gamified habit tracking.",
+
+    coverImage: "/cover/featured/treehealthy.png",
+
+    tags: ["React", "Tailwind CSS", "Node.js", "Express.js", "FastAPI", "Python", "Scikit-Learn", "Google Gemini API", "ChromaDB (RAG)", "PostgreSQL", "Recharts"],
+
+    type: "project",
+
+    status: "live",
+
+    link: "https://treehealthy.vercel.app/",
+
+    problem:
+      "Non-Communicable Diseases (NCDs) like hypertension and diabetes affect 53.5% of Indonesians aged 15+. While the national 'CERDIK' health campaign is widely recognized, users struggle to translate generic health advice into concrete, personalized daily habits suited to their body profile.",
+
+    solution:
+      "Engineered a full-stack platform with a decoupled Express.js & FastAPI architecture. It combines a Random Forest ML model for real-time NCD risk scoring, a ChromaDB RAG pipeline for Kemenkes-verified AI medical explanations, and a Gemini AI generator that produces structured 7-day action plans with gamified tree-growth progress tracking.",
+
+    impact:
+      "Successfully bridged the gap between medical guidelines and daily execution by converting clinical health assessments into 100% actionable weekly tasks, boosting user engagement through visual growth feedback while maintaining zero-bug core flow stability.",
+
+    documentationSrc: [],
+  },
+
+  {
+    id: 2,
     title: "Centralized Manufacturing Operations System",
 
     description:
@@ -28,7 +58,7 @@ export const featured: PortfolioItem[] = [
   },
 
   {
-    id: 2,
+    id: 3,
 
     title: "Smart Agriculture Predictive Dashboard",
 
@@ -55,7 +85,7 @@ export const featured: PortfolioItem[] = [
   },
 
   {
-    id: 3,
+    id: 4,
 
     title: "Automated Global Signal Filtering System",
 
