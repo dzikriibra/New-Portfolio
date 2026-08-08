@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Eye, ExternalLink } from "lucide-react";
 import { featured } from "@/app/modules/project/data/featured";
 import { BaseButton } from "../button/BaseButton";
+import { ProjectReaction } from "../reaction/ProjectReaction";
 
 interface HighlightCardProps {
   onOpenModal: (item: any) => void;
@@ -25,9 +26,8 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
 
   if (!project) return null;
 
-  // SETUP LIMIT TAG TECH STACK
   const tags = project.tags || [];
-  const MAX_TAGS = 6; // Jumlah maksimal tag yang ditampilkan langsung
+  const MAX_TAGS = 6;
   const visibleTags = tags.slice(0, MAX_TAGS);
   const hiddenTagsCount = tags.length - MAX_TAGS;
 
@@ -93,10 +93,10 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           {/* TITLE */}
           <h3
             className="
-              mb-6 text-center
+              mb-5 text-center
               text-2xl font-bold
               leading-tight text-white
-              lg:mb-5
+              lg:mb-8
               lg:text-left
             "
           >
@@ -104,7 +104,7 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           </h3>
 
           {/* DESCRIPTION */}
-          <div className="relative mb-6 lg:mb-8">
+          <div className="relative mb-5 lg:mb-8">
             <div
               className="
                 rounded-2xl
@@ -140,7 +140,7 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           {/* TECH STACK */}
           <div
             className="
-              mb-8 flex flex-wrap
+              mb-5 lg:mb-8 flex flex-wrap
               items-center justify-center gap-2
               lg:justify-start
             "
@@ -178,12 +178,18 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             )}
           </div>
 
+          {/* PROJECT REACTION (MOBILE ONLY) */}
+          <div className="mb-6 flex justify-center lg:hidden">
+            <ProjectReaction projectId={String(project.id)} initialReactions={project.initialReactions} />
+          </div>
+
           {/* ACTION BUTTONS */}
           <div
             className="
               flex flex-col
               items-center gap-4
               sm:flex-row
+              md: justify-center
               lg:justify-start
             "
           >
@@ -202,28 +208,86 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
         </div>
       </div>
 
-      {/* NAVIGATION */}
+      {/* BOTTOM BAR (DESKTOP) */}
       <div
         className="
-          absolute -bottom-6
-          left-1/2 z-20
-          flex -translate-x-1/2 gap-3
-          lg:left-auto
-          lg:right-12
-          lg:translate-x-0
-        "
+    absolute
+    -bottom-6
+    left-1/2
+    w-full
+    -translate-x-1/2
+    hidden
+    lg:flex
+    items-center
+    justify-between
+    z-20
+    px-8
+  "
+      >
+        {/* LEFT */}
+        <ProjectReaction projectId={String(project.id)} initialReactions={project.initialReactions} />
+
+        {/* RIGHT */}
+        <div className="flex gap-3">
+          <button
+            onClick={prevSlide}
+            className="
+        rounded-full
+        border border-white/10
+        bg-card-bg
+        p-3
+        text-white
+        transition-all
+        hover:border-accent
+        hover:text-accent
+      "
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="
+        rounded-full
+        border border-white/10
+        bg-card-bg
+        p-3
+        text-white
+        transition-all
+        hover:border-accent
+        hover:text-accent
+      "
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      {/* MOBILE NAVIGATION */}
+      <div
+        className="
+    absolute
+    -bottom-6
+    left-1/2
+    z-20
+    flex
+    -translate-x-1/2
+    gap-3
+    lg:hidden
+  "
       >
         <button
           onClick={prevSlide}
           className="
-            rounded-full border
-            border-white/10
-            bg-card-bg
-            p-3 text-white
-            transition-all
-            hover:border-accent
-            hover:text-accent
-          "
+      rounded-full
+      border border-white/10
+      bg-card-bg
+      p-3
+      text-white
+      transition-all
+      hover:border-accent
+      hover:text-accent
+    "
         >
           <ChevronLeft size={20} />
         </button>
@@ -231,14 +295,15 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
         <button
           onClick={nextSlide}
           className="
-            rounded-full border
-            border-white/10
-            bg-card-bg
-            p-3 text-white
-            transition-all
-            hover:border-accent
-            hover:text-accent
-          "
+      rounded-full
+      border border-white/10
+      bg-card-bg
+      p-3
+      text-white
+      transition-all
+      hover:border-accent
+      hover:text-accent
+    "
         >
           <ChevronRight size={20} />
         </button>

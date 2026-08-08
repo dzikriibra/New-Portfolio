@@ -49,6 +49,7 @@ export default function ProjectSection() {
     thumbnail: item.coverImage,
     title: item.title,
     type: item.type,
+    initialReactions: item.initialReactions,
 
     className: index % 4 === 0 || index % 4 === 3 ? "md:col-span-2 h-[350px]" : "col-span-1 h-[350px]",
 
