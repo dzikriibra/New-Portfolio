@@ -12,6 +12,8 @@ export interface PortfolioItem {
   link?: string;
   status?: ProjectStatus;
 
+  initialReactions?: Record<string, number>;
+
   problem?: string;
   solution?: string;
   impact?: string;

@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Award, Briefcase } from "lucide-react";
+import { ProjectReaction } from "../reaction/ProjectReaction";
 
 type Card = {
   id: number;
@@ -12,6 +13,7 @@ type Card = {
   thumbnail: string;
   title: string;
   type: "project" | "certificate";
+  initialReactions?: any;
 };
 
 const cardVariants: Variants = {
@@ -25,34 +27,50 @@ const cardVariants: Variants = {
 
 export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto gap-4 relative">
+    <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-10 md:grid-cols-3">
       {cards.map((card, i) => {
         const isProject = card.type === "project";
 
         return (
-          <motion.div key={card.id || i} variants={cardVariants} className={cn(card.className, "relative group min-h-[350px] w-full cursor-pointer")}>
-            <div className="relative overflow-hidden bg-card-bg/40 rounded-xl h-full w-full border border-white/5">
+          <motion.div key={card.id || i} variants={cardVariants} className={cn(card.className, "group relative min-h-[350px] w-full cursor-pointer")}>
+            {/* INNER WRAPPER: Di sini overflow-hidden dipasang biar gambar/hover overlay ga bocor */}
+            <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/5 bg-card-bg/40">
               {/* Thumbnail */}
               <Image src={card.thumbnail} fill alt={card.title} className="object-cover object-center transition-transform duration-700 group-hover:scale-110" />
 
+              {/* Default Label */}
               <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0">
-                <div className="flex items-center gap-2 mb-2">
+                <div className="mb-2 flex items-center gap-2">
                   <span
                     className={cn(
-                      "text-[10px] px-2 py-0.5 rounded-md font-bold uppercase border flex items-center gap-1",
-                      isProject ? "bg-green-400/20 border-y-green-400/30 text-green-300" : "bg-yellow-400/20 border-yellow-400/30 text-yellow-300",
+                      "flex items-center gap-1 rounded-md border px-2 py-0.5 text-[10px] font-bold uppercase",
+                      isProject ? "border-y-green-400/30 bg-green-400/20 text-green-300" : "border-yellow-400/30 bg-yellow-400/20 text-yellow-300",
                     )}
                   >
                     {isProject ? <Briefcase size={10} /> : <Award size={10} />}
                     {card.type}
                   </span>
                 </div>
-                <h3 className="text-white font-bold text-xl drop-shadow-md line-clamp-2">{card.title}</h3>
+                <h3 className="line-clamp-2 text-xl font-bold text-white drop-shadow-md">{card.title}</h3>
               </div>
 
-              {/* 2. HOVER OVERLAY (Muncul PAS di-hover) */}
+              {/* Hover Overlay */}
               <div className="absolute inset-0 z-20 flex flex-col justify-end bg-gradient-to-t from-black via-black/65 to-transparent p-6 opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
                 {card.content}
+              </div>
+            </div>
+
+            {/* BOTTOM REACTION */}
+            <div
+              className="
+    absolute
+    bottom-2
+    left-6
+    z-30
+  "
+            >
+              <div className="mt-1">
+                <ProjectReaction projectId={String(card.id)} initialReactions={card.initialReactions} />
               </div>
             </div>
           </motion.div>
