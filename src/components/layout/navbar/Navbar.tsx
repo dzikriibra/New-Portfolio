@@ -1,5 +1,5 @@
 "use client";
-import { Home, User, Briefcase, Zap, Mail, LucideIcon } from "lucide-react";
+import { Home, User, Briefcase, Zap, Mail, LucideIcon, RocketIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavItem {
@@ -10,7 +10,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   { name: "Home", icon: Home },
   { name: "About", icon: User },
-  { name: "Project", icon: Briefcase },
+  { name: "Experience", icon: Briefcase },
+  { name: "Project", icon: RocketIcon },
   { name: "Skill", icon: Zap },
   { name: "Contact", icon: Mail },
 ];

@@ -76,7 +76,7 @@ export default function ProjectSection() {
                 lg:text-5xl
               "
             >
-              Featured Projects & Validations
+              Featured Projects & Achievements
             </h2>
 
             <p className="mx-auto max-w-2xl text-description-text">

@@ -114,7 +114,7 @@ export default function PortofolioSection() {
                 md:text-5xl
               "
             >
-              Selected Projects & Learning Journey
+              Selected Projects & Creative Exploration
             </h1>
 
             <p
@@ -123,7 +123,7 @@ export default function PortofolioSection() {
                 text-center text-description-text
               "
             >
-              Exploring the intersection of logic and design through personal projects, client collaborations, and continuous skill upgrading.
+              Exploring the intersection of logic and design through personal projects, client collaborations, and continuous experimentation.
             </p>
           </div>
 
