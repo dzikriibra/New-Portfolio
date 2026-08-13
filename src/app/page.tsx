@@ -4,6 +4,7 @@ import AboutSection from "./modules/about/AboutSection";
 import ProjectSection from "./modules/project/ProjectSection";
 import SkillSection from "./modules/skill/SkillSection";
 import ContactSection from "./modules/contact/ContactSection";
+import ExperienceSection from "./modules/experience/ExperienceSection";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <HomeSection />
       <AboutSection />
+      <ExperienceSection />
       <ProjectSection />
       <SkillSection />
       <ContactSection />
