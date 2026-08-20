@@ -1,43 +1,66 @@
-import { SkillCategory } from "@/types/skill";
-import { Atom, Palette, Layers2 } from "lucide-react";
+import { Skill } from "@/types/skill";
 
-export const skillCategories: SkillCategory[] = [
+export const skillset: Skill[] = [
   {
     id: 1,
-    title: "Frontend Systems",
-    description: "Building responsive and structured interfaces with scalable UI patterns and reusable component architecture.",
-
-    principles: ["Component-based architecture", "Responsive-first development", "Reusable UI systems", "Structured frontend flow"],
-
-    tools: ["React", "TypeScript", "TailwindCSS", "Bootstrap", "Ant Design", "HTML5", "CSS3", "JavaScript"],
-
-    icon: Atom,
-    color: "#00F2FF",
+    number: "1",
+    title: "Frontend Tools",
+    description: "Building structured, responsive, and maintainable interfaces for real-world digital products.",
+    sections: [
+      {
+        label: "Core",
+        items: ["React", "Next.js", "TypeScript"],
+      },
+      {
+        label: "Interface",
+        items: ["Tailwind CSS", "Ant Design", "Framer Motion"],
+      },
+      {
+        label: "Foundation",
+        items: ["HTML", "CSS", "JavaScript"],
+      },
+      {
+        label: "Focus",
+        items: ["Component architecture", "Responsive development", "Reusable UI", "API integration"],
+      },
+    ],
   },
 
   {
     id: 2,
-    title: "UI/UX & Visual Thinking",
-    description: "Translating ideas into clean and understandable interfaces through hierarchy, spacing, and user-focused layouts.",
-
-    principles: ["Visual hierarchy", "Layout consistency", "Readable interfaces", "User-focused structure"],
-
-    tools: ["Wireframing", "Responsive Design", "Design Systems", "Figma", "Prototyping"],
-
-    icon: Palette,
-    color: "#A855F7",
+    number: "2",
+    title: "Design & Interfaces",
+    description: "Translating visual concepts and product requirements into clear, usable interfaces.",
+    sections: [
+      {
+        label: "Tools & Workspace",
+        items: ["Figma", "FigJam"],
+      },
+      {
+        label: "UI & Design System",
+        items: ["Design tokens", "Color & typography systems", "Auto-layout components", "UI prototyping"],
+      },
+      {
+        label: "Product Practices",
+        items: ["Visual hierarchy", "Responsive layout", "Design-to-code translation", "Component consistency"],
+      },
+    ],
   },
 
   {
     id: 3,
-    title: "Development Workflow",
-    description: "Supporting development processes through collaborative workflows, organized tooling, and iterative execution.",
-
-    principles: ["Version control workflow", "API testing & debugging", "Project organization", "Iterative development"],
-
-    tools: ["Git & GitHub", "Postman", "Swagger", "Notion", "ClickUp", "VSCode", "Laragon"],
-
-    icon: Layers2,
-    color: "#10B981",
+    number: "3",
+    title: "Development Practice",
+    description: "Working with structured processes and reusable systems to turn requirements into reliable interfaces.",
+    sections: [
+      {
+        label: "How I Build",
+        items: ["Component-based architecture", "Reusable UI patterns", "Responsive-first development", "Structured project organization", "Consistent implementation"],
+      },
+      {
+        label: "How I Collaborate",
+        items: ["Translating requirements into interfaces", "Working with design specifications", "Communicating technical constraints", "Iterating based on feedback"],
+      },
+    ],
   },
 ];
