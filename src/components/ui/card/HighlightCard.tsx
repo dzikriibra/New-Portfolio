@@ -33,7 +33,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
 
   return (
     <div className="relative mb-16 w-full lg:mb-24">
-      {/* MAIN CONTAINER */}
       <div
         className="
           relative flex h-[450px]
@@ -45,7 +44,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           lg:flex-row
         "
       >
-        {/* IMAGE SIDE */}
         <div
           className="
             absolute inset-0
@@ -67,7 +65,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             "
           />
 
-          {/* MOBILE OVERLAY */}
           <div
             className="
               absolute inset-0
@@ -80,7 +77,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           />
         </div>
 
-        {/* CONTENT SIDE */}
         <div
           className="
             relative z-10
@@ -90,7 +86,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             lg:p-10
           "
         >
-          {/* TITLE */}
           <h3
             className="
               mb-5 text-center
@@ -103,7 +98,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             {project.title}
           </h3>
 
-          {/* DESCRIPTION */}
           <div className="relative mb-5 lg:mb-8">
             <div
               className="
@@ -137,7 +131,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             </div>
           </div>
 
-          {/* TECH STACK */}
           <div
             className="
               mb-5 lg:mb-8 flex flex-wrap
@@ -161,7 +154,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
               </span>
             ))}
 
-            {/* TAG PLUS / COUNTER SISA */}
             {hiddenTagsCount > 0 && (
               <span
                 className="
@@ -178,12 +170,10 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             )}
           </div>
 
-          {/* PROJECT REACTION (MOBILE ONLY) */}
           <div className="mb-6 flex justify-center lg:hidden">
             <ProjectReaction projectId={String(project.id)} initialReactions={project.initialReactions} />
           </div>
 
-          {/* ACTION BUTTONS */}
           <div
             className="
               flex flex-col
@@ -193,13 +183,11 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
               lg:justify-start
             "
           >
-            {/* VIEW PROJECT */}
             <BaseButton onClick={() => onAction(project)} variant="primary" size="md" className="w-full sm:w-auto">
               View Project
               <Eye size={16} />
             </BaseButton>
 
-            {/* DETAIL */}
             <BaseButton onClick={() => onOpenModal(project)} variant="outline" size="md" className="w-full sm:w-auto">
               Detail
               <ExternalLink size={16} />
@@ -208,7 +196,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
         </div>
       </div>
 
-      {/* BOTTOM BAR (DESKTOP) */}
       <div
         className="
     absolute
@@ -224,10 +211,8 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
     px-8
   "
       >
-        {/* LEFT */}
         <ProjectReaction projectId={String(project.id)} initialReactions={project.initialReactions} />
 
-        {/* RIGHT */}
         <div className="flex gap-3">
           <button
             onClick={prevSlide}
@@ -263,7 +248,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
         </div>
       </div>
 
-      {/* MOBILE NAVIGATION */}
       <div
         className="
     absolute

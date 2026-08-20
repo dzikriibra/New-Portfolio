@@ -33,12 +33,9 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
         return (
           <motion.div key={card.id || i} variants={cardVariants} className={cn(card.className, "group relative min-h-[350px] w-full cursor-pointer")}>
-            {/* INNER WRAPPER: Di sini overflow-hidden dipasang biar gambar/hover overlay ga bocor */}
             <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/5 bg-card-bg/40">
-              {/* Thumbnail */}
               <Image src={card.thumbnail} fill alt={card.title} className="object-cover object-center transition-transform duration-700 group-hover:scale-110" />
 
-              {/* Default Label */}
               <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 group-hover:opacity-0">
                 <div className="mb-2 flex items-center gap-2">
                   <span
@@ -54,13 +51,11 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
                 <h3 className="line-clamp-2 text-xl font-bold text-white drop-shadow-md">{card.title}</h3>
               </div>
 
-              {/* Hover Overlay */}
               <div className="absolute inset-0 z-20 flex flex-col justify-end bg-gradient-to-t from-black via-black/65 to-transparent p-6 opacity-0 translate-y-4 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
                 {card.content}
               </div>
             </div>
 
-            {/* BOTTOM REACTION */}
             <div
               className="
     absolute

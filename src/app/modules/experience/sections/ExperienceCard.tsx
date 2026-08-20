@@ -13,15 +13,12 @@ interface ExperienceCardProps {
 export const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
   return (
     <Card>
-      {/* KIRI: Content Job Info */}
       <CardLeft>
         <ExperienceContent type={experience.type} role={experience.role} period={experience.period} company={experience.company} description={experience.description} />
       </CardLeft>
 
-      {/* TENGAH: Garis Pemisah */}
       <CardDivider />
 
-      {/* KANAN: Accordion */}
       <CardRight>
         <ApproachAccordion approaches={experience.approaches} />
       </CardRight>
