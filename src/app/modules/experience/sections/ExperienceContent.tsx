@@ -14,7 +14,6 @@ interface ExperienceContentProps {
 export const ExperienceContent: React.FC<ExperienceContentProps> = ({ type, role, period, company, description }) => {
   return (
     <div className="flex flex-col gap-4 w-full p-2">
-      {/* 1. HEADER ROW: BADGE + DOT SEPARATOR + COMPANY */}
       <div className="flex flex-wrap items-center gap-2.5 text-sm font-medium">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-accent/10 border border-accent/20 text-accent font-semibold">
           <Briefcase size={15} />
@@ -27,7 +26,6 @@ export const ExperienceContent: React.FC<ExperienceContentProps> = ({ type, role
         </span>
       </div>
 
-      {/* 2. TITLE & PERIOD METADATA */}
       <div className="space-y-4">
         <h3 className="text-2xl sm:text-2xl font-extrabold text-white tracking-tight leading-snug">{role}</h3>
         <div className="flex items-center gap-2 text-sm font-medium text-slate-400">
@@ -36,7 +34,6 @@ export const ExperienceContent: React.FC<ExperienceContentProps> = ({ type, role
         </div>
       </div>
 
-      {/* 3. DESKRIPSI */}
       <p className="text-base text-description-text leading-relaxed font-normal pt-1">{description}</p>
     </div>
   );

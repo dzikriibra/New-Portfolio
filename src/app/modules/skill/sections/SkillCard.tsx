@@ -20,16 +20,13 @@ export const SkillCard = ({ skill }: SkillCardProps) => {
       "
     >
       <div>
-        {/* TITLE */}
         <h3 className="font-headline text-xl sm:text-2xl font-bold text-white tracking-tight mb-3">
           <span className="text-white">{skill.number}. </span>
           <span>{skill.title}</span>
         </h3>
 
-        {/* DESCRIPTION */}
         <p className="text-sm text-slate-300 leading-relaxed font-normal mb-6">{skill.description}</p>
 
-        {/* SECTIONS */}
         <div className="space-y-5">
           {skill.sections.map((section) => (
             <div key={section.label} className="space-y-1">
@@ -52,7 +49,6 @@ export const SkillCard = ({ skill }: SkillCardProps) => {
         </div>
       </div>
 
-      {/* FOOTNOTE UNTUK CARD DESIGN */}
       {skill.id === 2 && <p className="mt-6 text-[11px] italic text-amber-400 border-t border-white/5 pt-3">*Design supports how I build, not what I primarily build.</p>}
     </article>
   );

@@ -18,15 +18,12 @@ export const BasicCard = ({ id, title, description, coverImage, tags, link, type
       className={`group relative aspect-4/3 w-full transition-all duration-500
       ${isSelected ? "scale-105 z-10" : "scale-95 opacity-60"}`}
     >
-      {/* CARD INNER WRAPPER (Tempat Image, Label, & Hover Overlay) */}
       <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/5 bg-card-bg/40">
         {/* Image */}
         <Image src={coverImage} alt={title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
 
-        {/* Gradient Shadow Bawah untuk memperjelas Teks/Label */}
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" />
 
-        {/* Label Default (Sebelum Hover) */}
         <div className="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
           <span
             className={`backdrop-blur-md border text-[10px] px-2 py-0.5 rounded-md mb-2 inline-flex items-center gap-1 uppercase tracking-wider font-bold
@@ -39,13 +36,11 @@ export const BasicCard = ({ id, title, description, coverImage, tags, link, type
           <h4 className="font-bold text-xl text-white drop-shadow-md">{title}</h4>
         </div>
 
-        {/* Overlay (Pas Hover) */}
         <div className="absolute inset-0 z-30 flex flex-col justify-end bg-gradient-to-t from-primary-bg via-primary-bg/95 to-transparent p-6 sm:p-8 opacity-0 translate-y-10 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:translate-y-0">
           <h4 className="mb-2 text-xl font-bold text-white">{title}</h4>
 
           <p className="mb-4 text-sm text-description-text line-clamp-3 font-body">{description}</p>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {tags.map((tag) => (
               <span key={tag} className="rounded-full bg-accent/10 px-2 py-1 text-[10px] font-medium text-accent border border-accent/20">
@@ -54,7 +49,6 @@ export const BasicCard = ({ id, title, description, coverImage, tags, link, type
             ))}
           </div>
 
-          {/* Actions */}
           <div className="flex gap-3">
             <BaseButton as="a" href={link} variant="primary" size="sm" className="flex-1">
               {isProject ? "View Project" : "Verify Certificate"}
@@ -68,7 +62,6 @@ export const BasicCard = ({ id, title, description, coverImage, tags, link, type
         </div>
       </div>
 
-      {/* REACTION - CENTERED ON BOTTOM BORDER */}
       <div
         className="
     absolute
