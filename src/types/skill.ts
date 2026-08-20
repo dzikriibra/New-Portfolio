@@ -1,11 +1,12 @@
-import { LucideIcon } from "lucide-react";
+export interface SkillSection {
+  label: string;
+  items: string[];
+}
 
-export interface SkillCategory {
+export interface Skill {
   id: number;
+  number: string;
   title: string;
   description: string;
-  principles: string[];
-  tools: string[];
-  icon: LucideIcon;
-  color: string;
+  sections: SkillSection[];
 }
