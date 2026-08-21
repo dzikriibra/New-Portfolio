@@ -6,7 +6,7 @@ export const CONTACT_DATA = {
     description: "Whether you have a project in mind, a leadership role to fill, or just want to discuss the future of digital solutions — I'm ready to connect.",
     location: "Karawang, West Java",
     email: "workwithdzikri@gmail.com",
-    cvUrl: "./public/curriculum-vitae/Dzikri Ibrahim Wahhab CV.pdf",
+    cvUrl: "/curriculum-vitae/Dzikri Ibrahim Wahhab CV.pdf",
     responseTime: "LESS THAN 24 HOURS",
     availability: "PART-TIME & FREELANCE",
   },
