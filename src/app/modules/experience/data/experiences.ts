@@ -2,6 +2,35 @@ import { Experience } from "@/types/experience";
 
 export const experiences: Experience[] = [
   {
+    id: "exp-3",
+    role: "Frontend Developer & Technical Coordinator",
+    company: "Government-Funded R&D Project",
+    period: "Apr 2026 – Present",
+    type: "Remote — Research Project",
+    description:
+      "Developing the frontend interface for a Smart Agriculture Prediction System targeted for Pemda Sukabumi. Responsible for building UI components that systematically visualize crop yield predictions, while serving as the central liaison between the supervising lecturer and the technical team.",
+    approaches: [
+      {
+        id: "app-2-1",
+        number: "01",
+        title: "Data Visualization & UI Development",
+        description: "Engineering structured and responsive web components tailored to present complex agricultural prediction data clearly to government stakeholders.",
+      },
+      {
+        id: "app-2-2",
+        number: "02",
+        title: "Stakeholder Alignment & Translation",
+        description: "Acting as the primary bridge between the supervising lecturer and the development team, ensuring academic and project requirements are accurately translated into technical specifications.",
+      },
+      {
+        id: "app-2-3",
+        number: "03",
+        title: "Technical Team Coordination",
+        description: "Managing the frontend workflow by delegating tasks and streamlining communication channels to keep the engineering team aligned with the overarching project directives.",
+      },
+    ],
+  },
+  {
     id: "exp-1",
     role: "Frontend Developer & Assistant Project Manager",
     company: "Independent Client Project",
