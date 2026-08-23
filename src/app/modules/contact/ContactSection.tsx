@@ -9,7 +9,7 @@ import { Download } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative w-full bg-primary-bg pt-24 overflow-hidden font-sans">
+    <section id="contact" className="relative w-full bg-primary-bg pt-20 overflow-hidden font-sans">
       <div className="container mx-auto px-4 md:px-6 pb-12">
         <div className="flex flex-col lg:flex-row gap-20">
           <motion.div initial={{ opacity: 0, x: -100 }} whileInView={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -100 }} viewport={{ once: false, amount: 0.2 }} transition={{ duration: 0.8, ease: "easeOut" }} className="flex-1">
