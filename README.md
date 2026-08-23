@@ -1,27 +1,54 @@
-# New-Portofolio
+# 🚀 Professional Portfolio v2
 
-Repositori ini berisi portofolio pribadi versi kedua yang sedang saya kembangkan. Project ini merupakan sarana belajar saya untuk mendalami workflow pengembangan web modern dan dokumentasi hasil pengerjaan project (Web & Desain).
+Repositori ini berisi portofolio pribadi versi kedua yang dibangun menggunakan ekosistem modern web development. Project ini dirancang untuk mendokumentasikan hasil pengerjaan proyek _software engineering_, eksplorasi desain, serta _use-case_ dunia nyata secara interaktif dan performan.
 
-## 🛠️ Build With
+---
+
+## 🛠️ Tech Stack & Tools
 
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
-- **Animation:** Framer Motion
-- **UI Components:** Kodingan komponen kustom yang dikembangkan dengan bantuan AI (ChatGPT/Gemini), dengan referensi pola desain dari Aceternity UI dan Shadcn/ui.
+- **Animations:** Framer Motion
+- **UI Architecture:** Custom Components inspired by Aceternity UI & Shadcn/ui
+- **Performance:** Optimized Core Web Vitals (LCP, CLS, INP)
 
-## 📂 Project List
+---
 
-Daftar project yang saya masukkan ke dalam portofolio ini:
+## 📂 Featured Projects
 
-- **Micro ERP for Textile Industry:** Aplikasi manajemen bisnis sublim kain (Project Freelance).
-- **Sport Apparel Logo Design:** Eksplorasi desain logo untuk brand jersey (Project Desain).
-- **Halcyon Batch Identity:** Rencana profil digital untuk angkatan SMA (In-Progress).
-- **Legacy Portfolio v1:** Arsip portofolio pertama saya saat mulai belajar web dev.
+- **TreeHealthy** `(Best Capstone Project - Dicoding Bootcamp Batch 13)`  
+  Platform personalisasi gaya hidup berbasis konsep CERDIK untuk pencegahan Penyakit Tidak Menular (PTM) di Indonesia.  
+  _Role: Project Manager, UI/UX Designer, & Frontend Developer_
 
-## 💡 Development Note
+- **Smart Agriculture Prediction System (SAPS)** `(Academic Research Project)`  
+  Sistem prediksi hasil panen padi berbasis data di Kecamatan Jampang, Kabupaten Sukabumi. Dikembangkan bersama tim penelitian dosen dan masih beroperasi aktif.  
+  _Role: Frontend Developer & Techinal Coordinator_
 
-Project ini dibangun dengan pendekatan **AI-Assisted Development**. Saya menggunakan AI untuk membantu men-generate struktur dasar komponen UI, yang kemudian saya sesuaikan dan integrasikan ke dalam arsitektur Next.js untuk memenuhi kebutuhan desain yang saya inginkan.
+- **Micro ERP for Textile Industry** `(Freelance Project)`  
+  Sistem manajemen bisnis dan operasional berbasis mikro ERP untuk industri sublim kain.  
+  _Role: Frontend Developer & Assistant Project Manager_
+
+- **Legacy Portfolio v1** `(Archive)`  
+  Arsip portofolio versi awal sebagai penanda iterasi dan _growth_ dalam software engineering.
+
+---
+
+## 💡 Engineering Approach & Workflow
+
+Project ini dibangun menggunakan pendekatan **AI-Assisted Development Workflow**:
+
+- Mengoptimalkan AI (LLM) untuk akselerasi penyusunan boilerplate dan _prototyping_ komponen UI.
+- Melakukan refactoring, pengintegrasian arsitektur _state management_, serta optimasi performa _client-side_ (Framer Motion & Next Image) secara independen untuk menjaga standar kode tetap berskala tinggi.
+
+---
+
+## 🚀 Getting Started
+
+1. Clone repositori ini:
+   ```bash
+   git clone [https://github.com/username/new-portofolio.git](https://github.com/username/new-portofolio.git)
+   ```
 
 ## 🚀 Run Locally
 
