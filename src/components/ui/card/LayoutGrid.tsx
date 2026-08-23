@@ -117,7 +117,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
         const isProject = card.type === "project";
 
         return (
-          <motion.div key={card.id || index} variants={cardVariants} className={cn(card.className, "group relative min-h-[350px] w-full")}>
+          <motion.div key={card.id || index} variants={cardVariants} className={cn(card.className, "group relative min-h-87.5 w-full")}>
             {/* CARD */}
             <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/5 bg-card-bg/40">
               {/* THUMBNAIL */}
@@ -133,11 +133,8 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               />
 
               {/* 
-                DESKTOP:
-                Title preview sebelum hover.
-
-                TABLET / MOBILE:
-                Tidak perlu preview karena content langsung tampil.
+                DESKTOP: Title preview sebelum hover.
+                TABLET / MOBILE: Tidak perlu preview karena content langsung tampil.
               */}
               <div
                 className="
@@ -174,11 +171,8 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
               {/* 
                 CONTENT
 
-                MOBILE / TABLET:
-                langsung terlihat.
-
-                DESKTOP:
-                tersembunyi → muncul ketika hover.
+                MOBILE / TABLET: langsung terlihat.
+                DESKTOP: tersembunyi → muncul ketika hover.
               */}
               <div
                 className="
@@ -205,7 +199,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
             </div>
 
             {/* REACTION */}
-            <div className="absolute bottom-2 left-6 z-30">
+            <div className="absolute -bottom-4 left-6 z-30">
               <div className="mt-1">
                 <ProjectReaction projectId={String(card.id)} initialReactions={card.initialReactions} />
               </div>

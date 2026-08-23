@@ -13,10 +13,9 @@ export default function SkillSection() {
       className="
         relative flex min-h-screen w-full flex-col
         overflow-hidden bg-primary-bg
-        px-4 pt-16 pb-12 
-        md:px-6 md:pt-14 md:pb-16
-        lg:pt-12 lg:pb-20
-        scroll-mt-16
+        px-4 pt-14 pb-12 
+        md:px-6 md:pt-16 md:pb-16
+        lg:pt-18 lg:pb-20
       "
     >
       <div className="mx-auto w-full max-w-7xl">

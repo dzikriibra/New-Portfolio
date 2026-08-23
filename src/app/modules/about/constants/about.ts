@@ -1,4 +1,4 @@
-import { Code2, Globe, GraduationCap } from "lucide-react";
+import { Globe, Layers3, GraduationCap } from "lucide-react";
 
 export const ABOUT_DATA = {
   typeWriterItems: [" Clarity", " Structure", " Precision", " Consistency"],
@@ -14,7 +14,7 @@ export const ABOUT_DATA = {
     {
       label: "Project Completed",
       value: "8+",
-      icon: Code2,
+      icon: Layers3,
       color: "text-green-600",
       hoverBorder: "hover:border-green-700",
     },
