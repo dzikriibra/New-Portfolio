@@ -38,7 +38,7 @@ export const SkillCard = ({ skill }: SkillCardProps) => {
                 <ul className="space-y-1 pt-0.5 text-sm text-slate-300/90 leading-relaxed">
                   {section.items.map((item) => (
                     <li key={item} className="flex items-start gap-2">
-                      <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-slate-300/80" />
+                      <span className="mt-1.75 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-300/80" />
                       <span>{item}</span>
                     </li>
                   ))}
