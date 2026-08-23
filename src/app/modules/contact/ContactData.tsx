@@ -12,7 +12,7 @@ export const CONTACT_DATA = {
   },
   socials: [
     { icon: Github, label: "Github", sub: "Repositories", href: "https://github.com/dzikriibra", hoverColor: "group-hover:border-white group-hover:text-white" },
-    { icon: Instagram, label: "Instagram", sub: "Life & Works", href: "https://www.instagram.com/dzikriibr_?igsh=aW5tZHUyeThtYjIx", hoverColor: "group-hover:border-pink-500 group-hover:text-pink-500" },
+    { icon: Instagram, label: "Instagram", sub: "Logbook", href: "https://www.instagram.com/dzikriibr_?igsh=aW5tZHUyeThtYjIx", hoverColor: "group-hover:border-pink-500 group-hover:text-pink-500" },
     { icon: Linkedin, label: "LinkedIn", sub: "Professional", href: "https://www.linkedin.com/in/dzikri-ibrahim-wahhab", hoverColor: "group-hover:border-blue-500 group-hover:text-blue-500" },
   ],
   actions: [

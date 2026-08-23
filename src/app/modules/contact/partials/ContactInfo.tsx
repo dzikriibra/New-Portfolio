@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 export const ContactInfo = ({ data }: { data: any }) => (
   <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex-1 space-y-8 text-center lg:text-left">
     <div className="space-y-6">
-      <h2 className="text-5xl md:text-7xl font-bold text-white leading-tight font-headline">
+      <h2 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline">
         Let's Start a <br />
         <span className="text-accent">Conversation</span>
       </h2>
-      <p className="max-w-md mx-auto lg:mx-0 text-description-text text-lg leading-relaxed">{data.description}</p>
+      <p className="max-w-md mx-auto lg:mx-0 text-description-text text-md md:text-lg leading-relaxed">{data.description}</p>
     </div>
 
     <div className="space-y-6">

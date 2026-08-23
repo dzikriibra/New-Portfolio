@@ -33,7 +33,7 @@ export const featured: PortfolioItem[] = [
 
   {
     id: 2,
-    title: "Centralized Manufacturing Operations System",
+    title: "Textile Operations System",
 
     description:
       "An operational automation system designed to digitize conventional workflows within the textile manufacturing industry. Integrates raw material management, real-time cross-division order tracking, and employee performance monitoring into a centralized dashboard to reduce miscommunication and manual bureaucracy.",
@@ -60,7 +60,7 @@ export const featured: PortfolioItem[] = [
   {
     id: 3,
 
-    title: "Smart Agriculture Predictive Dashboard",
+    title: "Smart Agriculture Prediction System",
 
     description:
       "A web-based information system developed to predict rice harvest production using Machine Learning algorithms. Integrates complex predictive research data into an intuitive, clear, and structured dashboard interface for end users.",
