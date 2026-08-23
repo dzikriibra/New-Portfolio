@@ -6,7 +6,7 @@ export const experiences: Experience[] = [
     role: "Frontend Developer & Technical Coordinator",
     company: "Government-Funded R&D Project",
     period: "Apr 2026 – Present",
-    type: "Remote — Research Project",
+    type: "Research Project — Remote",
     description:
       "Developing the frontend interface for a Smart Agriculture Prediction System targeted for Pemda Sukabumi. Responsible for building UI components that systematically visualize crop yield predictions, while serving as the central liaison between the supervising lecturer and the technical team.",
     approaches: [

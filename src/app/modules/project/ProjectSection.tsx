@@ -71,7 +71,7 @@ export default function ProjectSection() {
           <div className="mb-11 space-y-4 text-center">
             <h2
               className="
-                font-headline text-4xl
+                font-headline text-3xl
                 font-bold text-white
                 lg:text-5xl
               "
@@ -93,7 +93,7 @@ export default function ProjectSection() {
           </div>
 
           {/* BUTTON */}
-          <div className="mt-8 flex justify-center md:mt-12">
+          <div className="mt-14 flex justify-center">
             <Link href="/portofolio">
               <BaseButton
                 variant="outline"

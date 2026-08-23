@@ -42,6 +42,18 @@ export const certificates: PortfolioItem[] = [
 
   {
     id: 204,
+    title: "Full-Stack Web Development (React + Node.js) - Dicoding Bootcamp Batch 13",
+    description: "Successfully completed an intensive Full-Stack Web Development program covering modern web architecture, frontend development with React, backend API creation with Node.js, and industry-standard practices.",
+    coverImage: "/cover/certificates/dicoding-bootcamp.png",
+    tags: ["React", "Node.js", "Full-Stack Web Development", "JavaScript", "REST API", "Software Engineering"],
+    type: "certificate",
+    publisher: "Dicoding Indonesia",
+    issuedDate: "21 Aug 2026",
+    credentialSrc: ["/docs/certs/grad-dicoding.png"],
+  },
+
+  {
+    id: 205,
     title: "Badan Ekraf Developer Day 2025",
     description:
       "Participated in technical discussions and industry-sharing sessions covering modern web technologies, application ecosystems, and digital product development trends to broaden practical insight into the evolving tech industry.",
@@ -54,23 +66,11 @@ export const certificates: PortfolioItem[] = [
   },
 
   {
-    id: 205,
-    title: "Full-Stack Web Development (React + Node.js) - Dicoding Bootcamp Batch 13",
-    description: "Successfully completed an intensive Full-Stack Web Development program covering modern web architecture, frontend development with React, backend API creation with Node.js, and industry-standard practices.",
-    coverImage: "/cover/certificates/dicoding-bootcamp.png",
-    tags: ["React", "Node.js", "Full-Stack Web Development", "JavaScript", "REST API", "Software Engineering"],
-    type: "certificate",
-    publisher: "Dicoding Indonesia",
-    issuedDate: "21 Aug 2026",
-    credentialSrc: ["/docs/certs/grad-dicoding.png"],
-  },
-
-  {
     id: 206,
     title: "UI Design Fundamentals",
     description: "Developed a strong understanding of layout composition, typography, spacing, and visual hierarchy principles to create cleaner, more intuitive, and user-focused interface designs.",
     coverImage: "/cover/certificates/specskill.png",
-    tags: ["UI Design", "Typography", "Visual Hierarchy", "Layout Composition", "Spacing System", "Design Principles", "User Interface", "Figma"],
+    tags: ["UI Design", "Visual Hierarchy", "Layout Composition", "Spacing System", "Typography", "Design Principles", "User Interface", "Figma"],
     type: "certificate",
     publisher: "Special Skill",
     issuedDate: "2025",
@@ -171,5 +171,17 @@ export const certificates: PortfolioItem[] = [
     publisher: "Dicoding",
     issuedDate: "2025",
     credentialSrc: ["/docs/certs/fundamental-git-github.png"],
+  },
+
+  {
+    id: 215,
+    title: "Productivity with AI Bootcamp",
+    description: "Mastered practical AI integration to optimize daily workflows, featuring effective prompt engineering, leveraging AI productivity tools, and practicing ethical, secure, and responsible AI implementation.",
+    coverImage: "/cover/certificates/bdt.png",
+    tags: ["Prompt Engineering", "AI Productivity", "Generative AI", "Workflow Optimization"],
+    type: "certificate",
+    publisher: "Dicoding x Badan Ekraf Digital Talent",
+    issuedDate: "May 2026",
+    credentialSrc: ["/docs/certs/bdt-ai-productivity.png"],
   },
 ];

@@ -18,10 +18,12 @@ export const AboutVisual = () => {
       </h2>
 
       <div className="relative group">
-        <div className="absolute -inset-4 bg-accent/20 rounded-full blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        {/* Glow ambient background (Muncul halus / selalu nyala tipis) */}
+        <div className="absolute -inset-4 bg-accent/20 rounded-full blur-[50px] opacity-40 group-hover:opacity-100 transition-opacity duration-700" />
 
         <CometCard className="w-70 h-95 md:w-82.5 md:h-107.5 relative z-10 overflow-hidden">
-          <Image src={ABOUT_DATA.profileImage} alt="Dzikri Ibrahim Wahhab" fill className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out" />
+          {/* Foto Full Color Default + Zoom tipis pas hover */}
+          <Image src={ABOUT_DATA.profileImage} alt="Dzikri Ibrahim Wahhab" fill className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" />
         </CometCard>
       </div>
     </motion.div>
