@@ -19,7 +19,7 @@ export default function ExperienceSection() {
         lg:pt-20
       "
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-6 pb-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
