@@ -53,6 +53,7 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
           "
         >
           <Image
+            quality={75}
             src={project.coverImage}
             alt={project.title}
             fill

@@ -125,6 +125,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
                 src={card.thumbnail}
                 fill
                 alt={card.title}
+                quality={75}
                 className="
                   object-cover object-center
                   transition-transform duration-700
