@@ -41,7 +41,7 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
         bg-black/20
       "
     >
-      <Image src={preview} alt={title} fill className="object-cover" />
+      <Image src={preview} alt={title} fill quality={75} className="object-cover" />
     </div>
   );
 };

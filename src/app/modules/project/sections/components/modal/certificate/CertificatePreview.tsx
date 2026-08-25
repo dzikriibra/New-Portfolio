@@ -19,7 +19,7 @@ export const CertificatePreview = ({ image, title }: CertificatePreviewProps) =>
       "
     >
       {image ? (
-        <Image src={image} alt={title} fill className="object-cover" />
+        <Image src={image} alt={title} fill quality={75} className="object-cover" />
       ) : (
         <div
           className="
