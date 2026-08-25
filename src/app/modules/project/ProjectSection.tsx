@@ -66,7 +66,7 @@ export default function ProjectSection() {
           bg-primary-bg pt-16
         "
       >
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: false, amount: 0.1 }} className="w-full max-w-7xl mx-auto px-4 md:px-6">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.1 }} className="w-full max-w-7xl mx-auto px-4 md:px-6">
           {/* HEADER */}
           <div className="mb-11 space-y-4 text-center">
             <h2
