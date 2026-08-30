@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
-
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronDown } from "lucide-react";
 
 import { LayoutGrid } from "@/components/ui/card/LayoutGrid";
 import { BaseButton } from "@/components/ui/button/BaseButton";
@@ -22,8 +21,11 @@ import { handleProjectAction } from "./components/action/handleProjectAction";
 import { handleCertificateAction } from "./components/action/handleCertificateAction";
 import { StatusPopup } from "./components/action/StatusPopUp";
 
+const ITEMS_PER_PAGE = 6;
+
 export default function PortofolioSection() {
   const [filter, setFilter] = useState<"all" | "project" | "certificate">("all");
+  const [visibleCount, setVisibleCount] = useState<number>(ITEMS_PER_PAGE);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeContent, setActiveContent] = useState<any>(null);
@@ -31,9 +33,24 @@ export default function PortofolioSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [popupData, setPopupData] = useState<any>(null);
 
-  const allItems = [...projects, ...certificates];
+  // 1. Memoize gabungan data agar tidak di-recreate setiap re-render
+  const allItems = useMemo(() => [...projects, ...certificates], []);
 
-  const filteredItems = filter === "all" ? allItems : allItems.filter((item) => item.type === filter);
+  // 2. Filter item sesuai tab
+  const filteredItems = useMemo(() => {
+    return filter === "all" ? allItems : allItems.filter((item) => item.type === filter);
+  }, [filter, allItems]);
+
+  // Reset jumlah item yang tampil saat user ganti tab filter
+  const handleFilterChange = (newFilter: "all" | "project" | "certificate") => {
+    setFilter(newFilter);
+    setVisibleCount(ITEMS_PER_PAGE);
+  };
+
+  // 3. Batasi item yang dirender ke DOM sesuai visibleCount
+  const visibleItems = useMemo(() => {
+    return filteredItems.slice(0, visibleCount);
+  }, [filteredItems, visibleCount]);
 
   const openModal = (item: any) => {
     setActiveContent(item);
@@ -47,16 +64,21 @@ export default function PortofolioSection() {
     setIsPopupOpen(true);
   };
 
-  const cards = filteredItems.map((item, index) => ({
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + ITEMS_PER_PAGE);
+  };
+
+  const cards = visibleItems.map((item, index) => ({
     id: item.id,
     thumbnail: item.coverImage,
     title: item.title,
     type: item.type,
-
+    initialReactions: item.initialReactions,
     className: index % 4 === 0 || index % 4 === 3 ? "md:col-span-2" : "col-span-1",
-
     content: <PortfolioCard item={item} onOpenModal={openModal} onAction={handleAction} />,
   }));
+
+  const hasMore = visibleCount < filteredItems.length;
 
   return (
     <>
@@ -81,55 +103,22 @@ export default function PortofolioSection() {
               group-hover:-translate-x-1
             "
           />
-
           <span className="hidden md:inline">Back</span>
         </BaseButton>
       </Link>
 
       {/* SECTION */}
-      <section
-        className="
-          min-h-screen
-          bg-primary-bg
-          py-15 text-white
-        "
-      >
-        <div
-          className="
-            container mx-auto
-            min-h-375 px-4
-          "
-        >
+      <section className="min-h-screen bg-primary-bg py-15 text-white">
+        <div className="container mx-auto min-h-375 px-4">
           {/* HEADER */}
-          <div
-            className="
-              relative mb-10
-              flex flex-col items-center
-            "
-          >
-            <h1
-              className="
-                text-center font-headline
-                text-3xl font-bold
-                md:text-5xl
-              "
-            >
-              Selected Projects & Creative Exploration
-            </h1>
-
-            <p
-              className="
-                mt-4 max-w-3xl
-                text-center text-description-text
-              "
-            >
-              Exploring the intersection of logic and design through personal projects, client collaborations, and continuous experimentation.
-            </p>
+          <div className="relative mb-10 flex flex-col items-center">
+            <h1 className="text-center font-headline text-3xl font-bold md:text-5xl">Selected Projects & Creative Exploration</h1>
+            <p className="mt-4 max-w-3xl text-center text-description-text">Exploring the intersection of logic and design through personal projects, client collaborations, and continuous experimentation.</p>
           </div>
 
           {/* FILTER */}
           <div className="mb-5 flex justify-center">
-            <FilterTabs active={filter} onChange={setFilter} />
+            <FilterTabs active={filter} onChange={handleFilterChange} />
           </div>
 
           {/* HIGHLIGHT */}
@@ -139,6 +128,27 @@ export default function PortofolioSection() {
           <div className="mt-14">
             <LayoutGrid cards={cards} />
           </div>
+
+          {/* LOAD MORE BUTTON */}
+          {hasMore && (
+            <div className="mt-14 flex justify-center">
+              <BaseButton
+                onClick={handleLoadMore}
+                variant="outline"
+                className="
+                  group flex items-center gap-2
+                  border-white/10 px-6 py-3
+                  text-sm transition-all
+                  hover:border-accent/50
+                  active:scale-95
+                  md:px-8 md:py-4 md:text-base
+                "
+              >
+                Load More ({filteredItems.length - visibleCount} items left)
+                <ChevronDown size={16} className="transition-transform duration-300 group-hover:translate-y-1" />
+              </BaseButton>
+            </div>
+          )}
         </div>
       </section>
 

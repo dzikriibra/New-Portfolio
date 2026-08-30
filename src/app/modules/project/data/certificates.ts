@@ -54,6 +54,18 @@ export const certificates: PortfolioItem[] = [
 
   {
     id: 205,
+    title: "UI Design Fundamentals",
+    description: "Developed a strong understanding of layout composition, typography, spacing, and visual hierarchy principles to create cleaner, more intuitive, and user-focused interface designs.",
+    coverImage: "/cover/certificates/specskill.png",
+    tags: ["UI Design", "Visual Hierarchy", "Layout Composition", "Spacing System", "Typography", "Design Principles", "User Interface", "Figma"],
+    type: "certificate",
+    publisher: "Special Skill",
+    issuedDate: "2025",
+    credentialSrc: ["/docs/certs/ui-design.png"],
+  },
+
+  {
+    id: 206,
     title: "Badan Ekraf Developer Day 2025",
     description:
       "Participated in technical discussions and industry-sharing sessions covering modern web technologies, application ecosystems, and digital product development trends to broaden practical insight into the evolving tech industry.",
@@ -63,18 +75,6 @@ export const certificates: PortfolioItem[] = [
     publisher: "Dicoding x Badan Ekraf Indonesia",
     issuedDate: "2025",
     credentialSrc: ["/docs/certs/bekraf-dev-day.png"],
-  },
-
-  {
-    id: 206,
-    title: "UI Design Fundamentals",
-    description: "Developed a strong understanding of layout composition, typography, spacing, and visual hierarchy principles to create cleaner, more intuitive, and user-focused interface designs.",
-    coverImage: "/cover/certificates/specskill.png",
-    tags: ["UI Design", "Visual Hierarchy", "Layout Composition", "Spacing System", "Typography", "Design Principles", "User Interface", "Figma"],
-    type: "certificate",
-    publisher: "Special Skill",
-    issuedDate: "2025",
-    credentialSrc: ["/docs/certs/ui-design.png"],
   },
 
   {
