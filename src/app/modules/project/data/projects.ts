@@ -77,7 +77,7 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     impact: "Established an online professional presence and became the foundation for future portfolio iterations and personal branding efforts.",
 
-    documentationSrc: ["/cover/projects/oldportfolio.png"],
+    documentationSrc: [],
   },
 
   {
@@ -103,7 +103,7 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     impact: "Accelerated the branding process and provided the client with several validated design directions for future marketing materials.",
 
-    documentationSrc: ["/cover/projects/logo-jersey.png"],
+    documentationSrc: [],
   },
 
   {
@@ -129,7 +129,7 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     impact: "Strengthened community engagement and preserved collective memories through a modern digital archive.",
 
-    documentationSrc: ["/cover/projects/halcyon.png"],
+    documentationSrc: [],
   },
 
   {
@@ -156,6 +156,6 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     impact: "Transforms travel memories into an organized geographical timeline, improving personal documentation and trip recollection.",
 
-    documentationSrc: ["/cover/projects/geomemo.jpg"],
+    documentationSrc: [],
   },
 ];

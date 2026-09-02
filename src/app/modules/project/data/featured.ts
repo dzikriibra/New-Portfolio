@@ -54,7 +54,7 @@ export const featured: PortfolioItem[] = [
 
     impact: "Reduced operational bottlenecks, improved cross-department visibility, and minimized administrative overhead through workflow automation.",
 
-    documentationSrc: [],
+    documentationSrc: ["/docs/featured/jasasublim/ui-login.webp", "/docs/featured/jasasublim/flowchart.webp"],
   },
 
   {
