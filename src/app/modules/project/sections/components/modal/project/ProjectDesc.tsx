@@ -1,10 +1,10 @@
-"use client";
+import React, { memo } from "react";
 
 interface ProjectDescriptionProps {
   description: string;
 }
 
-export const ProjectDescription = ({ description }: ProjectDescriptionProps) => {
+export const ProjectDescription = memo(({ description }: ProjectDescriptionProps) => {
   return (
     <div
       className="
@@ -26,4 +26,6 @@ export const ProjectDescription = ({ description }: ProjectDescriptionProps) => 
       </p>
     </div>
   );
-};
+});
+
+ProjectDescription.displayName = "ProjectDescription";

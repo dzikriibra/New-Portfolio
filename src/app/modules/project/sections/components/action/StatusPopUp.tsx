@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { memo } from "react";
 import { ExternalLink, ShieldCheck, Wrench, Lock, Clock3 } from "lucide-react";
 
 interface StatusPopupProps {
   data: any;
 }
 
-export const StatusPopup = ({ data }: StatusPopupProps) => {
+export const StatusPopup = memo(({ data }: StatusPopupProps) => {
   if (!data) return null;
 
   // VERIFIED CERTIFICATE
@@ -21,7 +20,8 @@ export const StatusPopup = ({ data }: StatusPopupProps) => {
           <p className="text-5xl font-black uppercase border-[10px] border-white p-5 -rotate-12">Verified</p>
         </div>
 
-        <motion.div animate={{ top: ["0%", "100%", "0%"] }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} className="absolute left-0 right-0 h-[1px] bg-cyan-400/40 shadow-[0_0_10px_rgba(6,182,212,0.6)]" />
+        {/* Optimized Scan Line (CSS Keyframe / Lightweight Translate) */}
+        <div className="absolute left-0 right-0 top-0 h-[2px] bg-cyan-400/60 shadow-[0_0_12px_rgba(6,182,212,0.8)] animate-pulse" />
       </div>
     );
   }
@@ -102,4 +102,6 @@ export const StatusPopup = ({ data }: StatusPopupProps) => {
       </div>
     </div>
   );
-};
+});
+
+StatusPopup.displayName = "StatusPopup";

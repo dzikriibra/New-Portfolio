@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -27,34 +27,38 @@ export default function ProjectSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [popupData, setPopupData] = useState<any>(null);
 
-  const featuredProjects = projects.slice(0, 2);
-  const featuredCertificates = certificates.slice(0, 2);
-
-  const featuredItems = [featuredProjects[0], featuredCertificates[0], featuredCertificates[1], featuredProjects[1]];
-
-  const openModal = (item: any) => {
+  // Memoize handler biar gak berubah reference-nya
+  const openModal = useCallback((item: any) => {
     setActiveContent(item);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleAction = (item: any) => {
+  const handleAction = useCallback((item: any) => {
     const result = item.type === "project" ? handleProjectAction(item) : handleCertificateAction(item);
 
     setPopupData(result);
     setIsPopupOpen(true);
-  };
+  }, []);
 
-  const cards = featuredItems.map((item, index) => ({
-    id: item.id,
-    thumbnail: item.coverImage,
-    title: item.title,
-    type: item.type,
-    initialReactions: item.initialReactions,
+  // Memoize data item
+  const featuredItems = useMemo(() => {
+    const featuredProjects = projects.slice(0, 2);
+    const featuredCertificates = certificates.slice(0, 2);
+    return [featuredProjects[0], featuredCertificates[0], featuredCertificates[1], featuredProjects[1]].filter(Boolean); // Jaga-jaga kalau data kurang dari 2
+  }, []);
 
-    className: index % 4 === 0 || index % 4 === 3 ? "md:col-span-2 h-[350px]" : "col-span-1 h-[350px]",
-
-    content: <PortfolioCard item={item} onOpenModal={openModal} onAction={handleAction} />,
-  }));
+  // Memoize cards array
+  const cards = useMemo(() => {
+    return featuredItems.map((item, index) => ({
+      id: item.id,
+      thumbnail: item.coverImage,
+      title: item.title,
+      type: item.type,
+      initialReactions: item.initialReactions,
+      className: index % 4 === 0 || index % 4 === 3 ? "md:col-span-2 h-[350px]" : "col-span-1 h-[350px]",
+      content: <PortfolioCard item={item} onOpenModal={openModal} onAction={handleAction} />,
+    }));
+  }, [featuredItems, openModal, handleAction]);
 
   return (
     <>
@@ -66,7 +70,7 @@ export default function ProjectSection() {
           bg-primary-bg pt-16
         "
       >
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.1 }} className="w-full max-w-7xl mx-auto px-4 md:px-6">
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.1 }} className="mx-auto w-full max-w-7xl px-4 md:px-6">
           {/* HEADER */}
           <div className="mb-11 space-y-4 text-center">
             <h2

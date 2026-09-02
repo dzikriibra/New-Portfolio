@@ -9,7 +9,7 @@ export const featured: PortfolioItem[] = [
     description:
       "An AI-driven health management platform that transforms Indonesia's national CERDIK guidelines into personalized, 7-day actionable health routines to prevent Non-Communicable Diseases (NCDs). Built on a decoupled architecture, it features dynamic ML risk scoring, RAG-backed medical explainers, and interactive gamified habit tracking.",
 
-    coverImage: "/cover/featured/treehealthy.png",
+    coverImage: "/cover/featured/treehealthy.webp",
 
     tags: ["React", "Tailwind CSS", "Node.js", "Express.js", "FastAPI", "Python", "Scikit-Learn", "Google Gemini API", "ChromaDB (RAG)", "PostgreSQL", "Recharts"],
 
@@ -38,7 +38,7 @@ export const featured: PortfolioItem[] = [
     description:
       "An operational automation system designed to digitize conventional workflows within the textile manufacturing industry. Integrates raw material management, real-time cross-division order tracking, and employee performance monitoring into a centralized dashboard to reduce miscommunication and manual bureaucracy.",
 
-    coverImage: "/cover/featured/sublim.jpg",
+    coverImage: "/cover/featured/sublim.webp",
 
     tags: ["React", "Strapi", "MySQL", "Tailwind", "Ant Design", "Typescript"],
 
@@ -65,7 +65,7 @@ export const featured: PortfolioItem[] = [
     description:
       "A web-based information system developed to predict rice harvest production using Machine Learning algorithms. Integrates complex predictive research data into an intuitive, clear, and structured dashboard interface for end users.",
 
-    coverImage: "/cover/featured/rice-prediction.jpg",
+    coverImage: "/cover/featured/rice-prediction.webp",
 
     tags: ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "Machine Learning"],
 
@@ -92,7 +92,7 @@ export const featured: PortfolioItem[] = [
     description:
       "An AI-powered information mitigation system designed to filter global news noise through impact-based analysis. The system detects, summarizes, and delivers world events that may create domino effects on economic stability, career decisions, and personal life directly to private communication channels.",
 
-    coverImage: "/cover/featured/global-signal.jpg",
+    coverImage: "/cover/featured/global-signal.webp",
 
     tags: ["TypeScript", "Next.js", "Strapi", "OpenAI API", "Telegram Bot API"],
 

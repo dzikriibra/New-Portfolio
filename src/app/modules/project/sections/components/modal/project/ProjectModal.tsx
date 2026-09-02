@@ -1,7 +1,7 @@
 "use client";
 
+import React, { memo } from "react";
 import { PortfolioItem } from "@/types/project";
-
 import { ProjectGallery } from "./ProjectGallery";
 import { ProjectTags } from "./ProjectTags";
 import { ProjectTabs } from "./ProjectTabs";
@@ -10,7 +10,7 @@ interface ProjectModalProps {
   item: PortfolioItem;
 }
 
-export const ProjectModal = ({ item }: ProjectModalProps) => {
+export const ProjectModal = memo(({ item }: ProjectModalProps) => {
   return (
     <div
       className="
@@ -23,7 +23,6 @@ export const ProjectModal = ({ item }: ProjectModalProps) => {
       {/* LEFT SIDE */}
       <div className="space-y-4">
         <ProjectGallery images={item.documentationSrc} title={item.title} />
-
         <ProjectTags tags={item.tags} />
       </div>
 
@@ -33,4 +32,6 @@ export const ProjectModal = ({ item }: ProjectModalProps) => {
       </div>
     </div>
   );
-};
+});
+
+ProjectModal.displayName = "ProjectModal";

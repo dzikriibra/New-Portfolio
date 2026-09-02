@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import { ArrowLeft, ChevronDown } from "lucide-react";
 
@@ -33,50 +33,48 @@ export default function PortofolioSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [popupData, setPopupData] = useState<any>(null);
 
-  // 1. Memoize gabungan data agar tidak di-recreate setiap re-render
   const allItems = useMemo(() => [...projects, ...certificates], []);
 
-  // 2. Filter item sesuai tab
   const filteredItems = useMemo(() => {
     return filter === "all" ? allItems : allItems.filter((item) => item.type === filter);
   }, [filter, allItems]);
 
-  // Reset jumlah item yang tampil saat user ganti tab filter
-  const handleFilterChange = (newFilter: "all" | "project" | "certificate") => {
+  const handleFilterChange = useCallback((newFilter: "all" | "project" | "certificate") => {
     setFilter(newFilter);
     setVisibleCount(ITEMS_PER_PAGE);
-  };
+  }, []);
 
-  // 3. Batasi item yang dirender ke DOM sesuai visibleCount
   const visibleItems = useMemo(() => {
     return filteredItems.slice(0, visibleCount);
   }, [filteredItems, visibleCount]);
 
-  const openModal = (item: any) => {
+  const openModal = useCallback((item: any) => {
     setActiveContent(item);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleAction = (item: any) => {
+  const handleAction = useCallback((item: any) => {
     const result = item.type === "project" ? handleProjectAction(item) : handleCertificateAction(item);
 
     setPopupData(result);
     setIsPopupOpen(true);
-  };
+  }, []);
 
-  const handleLoadMore = () => {
+  const handleLoadMore = useCallback(() => {
     setVisibleCount((prev) => prev + ITEMS_PER_PAGE);
-  };
+  }, []);
 
-  const cards = visibleItems.map((item, index) => ({
-    id: item.id,
-    thumbnail: item.coverImage,
-    title: item.title,
-    type: item.type,
-    initialReactions: item.initialReactions,
-    className: index % 4 === 0 || index % 4 === 3 ? "md:col-span-2" : "col-span-1",
-    content: <PortfolioCard item={item} onOpenModal={openModal} onAction={handleAction} />,
-  }));
+  const cards = useMemo(() => {
+    return visibleItems.map((item, index) => ({
+      id: item.id,
+      thumbnail: item.coverImage,
+      title: item.title,
+      type: item.type,
+      initialReactions: item.initialReactions,
+      className: index % 4 === 0 || index % 4 === 3 ? "md:col-span-2" : "col-span-1",
+      content: <PortfolioCard item={item} onOpenModal={openModal} onAction={handleAction} />,
+    }));
+  }, [visibleItems, openModal, handleAction]);
 
   const hasMore = visibleCount < filteredItems.length;
 
@@ -109,7 +107,7 @@ export default function PortofolioSection() {
 
       {/* SECTION */}
       <section className="min-h-screen bg-primary-bg py-15 text-white">
-        <div className="container mx-auto min-h-375 px-4">
+        <div className="mx-auto w-full max-w-7xl min-h-375 px-4 md:px-6">
           {/* HEADER */}
           <div className="relative mb-10 flex flex-col items-center">
             <h1 className="text-center font-headline text-3xl font-bold md:text-5xl">Selected Projects & Creative Exploration</h1>

@@ -1,5 +1,4 @@
-"use client";
-
+import React, { memo } from "react";
 import Image from "next/image";
 
 interface ProjectGalleryProps {
@@ -7,7 +6,7 @@ interface ProjectGalleryProps {
   title: string;
 }
 
-export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
+export const ProjectGallery = memo(({ images, title }: ProjectGalleryProps) => {
   const preview = images?.[0];
 
   if (!preview) {
@@ -22,7 +21,7 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
           border border-dashed border-white/10
           bg-white/[0.02]
           text-center
-          text-based text-white/40
+          text-sm text-white/40
         "
       >
         Documentation preview is unavailable.
@@ -39,9 +38,12 @@ export const ProjectGallery = ({ images, title }: ProjectGalleryProps) => {
         rounded-2xl
         border border-white/10
         bg-black/20
+        transform-gpu
       "
     >
-      <Image src={preview} alt={title} fill quality={75} className="object-cover" />
+      <Image src={preview} alt={title} fill sizes="(max-width: 768px) 100vw, 50vw" quality={75} priority className="object-cover" />
     </div>
   );
-};
+});
+
+ProjectGallery.displayName = "ProjectGallery";
