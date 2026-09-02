@@ -1,7 +1,7 @@
 "use client";
 
+import React, { memo } from "react";
 import { PortfolioItem } from "@/types/project";
-
 import { CertificatePreview } from "./CertificatePreview";
 import { CertificateInfo } from "./CertificateInfo";
 
@@ -9,7 +9,7 @@ interface CertificateModalProps {
   item: PortfolioItem;
 }
 
-export const CertificateModal = ({ item }: CertificateModalProps) => {
+export const CertificateModal = memo(({ item }: CertificateModalProps) => {
   return (
     <div
       className="
@@ -20,11 +20,9 @@ export const CertificateModal = ({ item }: CertificateModalProps) => {
       "
     >
       {/* LEFT */}
-
       <CertificatePreview image={item.credentialSrc?.[0]} title={item.title} />
 
       {/* RIGHT */}
-
       <div className="space-y-6">
         <div>
           <p
@@ -42,4 +40,6 @@ export const CertificateModal = ({ item }: CertificateModalProps) => {
       </div>
     </div>
   );
-};
+});
+
+CertificateModal.displayName = "CertificateModal";

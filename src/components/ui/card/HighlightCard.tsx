@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import React, { useState, memo, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Eye, ExternalLink } from "lucide-react";
 import { featured } from "@/app/modules/project/data/featured";
@@ -11,18 +12,18 @@ interface HighlightCardProps {
   onAction: (item: any) => void;
 }
 
-export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => {
+export const HighlightCard = memo(({ onOpenModal, onAction }: HighlightCardProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const project = featured[currentIndex];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev === featured.length - 1 ? 0 : prev + 1));
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev === 0 ? featured.length - 1 : prev - 1));
-  };
+  }, []);
 
   if (!project) return null;
 
@@ -53,12 +54,12 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
         >
           <Image
             key={project.id}
-            quality={70}
+            quality={65}
             src={project.coverImage}
             alt={project.title}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            loading="eager"
+            priority={currentIndex === 0}
             className="
               object-cover
               transition-opacity duration-300
@@ -171,6 +172,7 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
             )}
           </div>
 
+          {/* Reaction khusus Mobile */}
           <div className="mb-6 flex justify-center lg:hidden">
             <ProjectReaction key={`mobile-${project.id}`} projectId={String(project.id)} initialReactions={project.initialReactions} />
           </div>
@@ -301,4 +303,6 @@ export const HighlightCard = ({ onOpenModal, onAction }: HighlightCardProps) => 
       </div>
     </div>
   );
-};
+});
+
+HighlightCard.displayName = "HighlightCard";

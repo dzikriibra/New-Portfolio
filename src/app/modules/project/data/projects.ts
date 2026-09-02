@@ -7,7 +7,7 @@ export const projects: PortfolioItem[] = [
 
     description: "Comprehensive climbing management module: from preparation risk management, standard equipment checklists, to weight distribution techniques on the transport equipment to ensure stability and ergonomics.",
 
-    coverImage: "/cover/projects/hiking-v1.jpg",
+    coverImage: "/cover/projects/hiking-v1.webp",
 
     tags: ["HTML5", "CSS3"],
 
@@ -51,7 +51,7 @@ From a technical perspective, the project serves as an early demonstration of fr
 Overall, the platform contributes both educational value for beginner hikers and practical development experience through the creation of a purpose-driven web project.
   `,
 
-    documentationSrc: ["/docs/projects/hiking/guide1.png", "/docs/projects/hiking/guide2.png"],
+    documentationSrc: [],
   },
 
   {
@@ -61,7 +61,7 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     description: "My initial professional portfolio project developed during an intensive web development course. Focused on applying core web fundamentals and understanding the end-to-end deployment process.",
 
-    coverImage: "/cover/projects/oldportfolio.png",
+    coverImage: "/cover/projects/oldportfolio.webp",
 
     tags: ["HTML5", "CSS3", "Javascript", "Bootstrap"],
 
@@ -87,7 +87,7 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     description: "A professional logo design project for a sports apparel brand. Focuses on rapid visual exploration, creating 10+ iterations within 4 hours to find the perfect balance between brand identity and modern aesthetics.",
 
-    coverImage: "/cover/projects/logo-jersey.png",
+    coverImage: "/cover/projects/logo-jersey.webp",
 
     tags: ["Logo Design", "Figma", "Apparel System", "Rapid Prototyping"],
 
@@ -113,7 +113,7 @@ Overall, the platform contributes both educational value for beginner hikers and
 
     description: "A digital archive and community profile for my high school batch. Designed to preserve memories and showcase member directories through a modern interface, bridging high school nostalgia with professional web standards.",
 
-    coverImage: "/cover/projects/halcyon.png",
+    coverImage: "/cover/projects/halcyon.webp",
 
     tags: ["React", "Tailwind CSS", "TypeScript", "Framer Motion"],
 
@@ -140,7 +140,7 @@ Overall, the platform contributes both educational value for beginner hikers and
     description:
       "A personal interactive map designed to record, save, and revisit memorable travel experiences. Features location search, destination history markers, and smart navigation to preserve every meaningful place you've visited.",
 
-    coverImage: "/cover/projects/geomemo.jpg",
+    coverImage: "/cover/projects/geomemo.webp",
 
     tags: ["JavaScript", "Leaflet.js", "Bootstrap 5", "HTML5", "CSS3"],
 
