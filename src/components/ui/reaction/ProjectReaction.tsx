@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
 
@@ -10,7 +10,6 @@ export interface EmojiOption {
   label: string;
 }
 
-// 5 Preset Emoji Universal & Jelas
 const EMOJI_LIST: EmojiOption[] = [
   { id: "fire", emoji: "🔥", label: "Fire" },
   { id: "awesome", emoji: "🚀", label: "Awesome" },
@@ -30,153 +29,162 @@ interface ProjectReactionProps {
   compact?: boolean;
 }
 
-export const ProjectReaction = ({ projectId, initialReactions = {}, compact = false }: ProjectReactionProps) => {
+export const ProjectReaction = memo(({ projectId, initialReactions = {}, compact = false }: ProjectReactionProps) => {
   const [counts, setCounts] = useState<Record<string, number>>(initialReactions);
   const [userSelected, setUserSelected] = useState<string | null>(null);
   const [isPickerOpen, setIsPickerOpen] = useState(false);
   const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
 
-  // Sync state dari LocalStorage
+  // Asynchronous / Non-blocking Sync dari LocalStorage
   useEffect(() => {
-    const savedSelected = localStorage.getItem(`reaction_user_${projectId}`);
-    const savedCounts = localStorage.getItem(`reaction_counts_${projectId}`);
-
-    if (savedSelected) setUserSelected(savedSelected);
-    if (savedCounts) {
+    const syncLocalStorage = () => {
       try {
-        setCounts(JSON.parse(savedCounts));
+        const savedSelected = localStorage.getItem(`reaction_user_${projectId}`);
+        const savedCounts = localStorage.getItem(`reaction_counts_${projectId}`);
+
+        if (savedSelected) setUserSelected(savedSelected);
+        if (savedCounts) {
+          setCounts(JSON.parse(savedCounts));
+        }
       } catch (e) {
-        setCounts(initialReactions);
+        // Fallback silence jika localStorage error
       }
+    };
+
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(() => syncLocalStorage());
     } else {
-      setCounts(initialReactions);
+      setTimeout(syncLocalStorage, 50);
     }
   }, [projectId]);
 
-  const handleToggleReaction = (emojiId: string) => {
-    let updatedCounts = { ...counts };
-    let newSelection: string | null = null;
+  const handleToggleReaction = useCallback(
+    (emojiId: string) => {
+      setCounts((prevCounts) => {
+        const updatedCounts = { ...prevCounts };
+        let newSelection: string | null = null;
 
-    if (userSelected === emojiId) {
-      updatedCounts[emojiId] = Math.max(0, (updatedCounts[emojiId] || 1) - 1);
-      newSelection = null;
-    } else {
-      if (userSelected) {
-        updatedCounts[userSelected] = Math.max(0, (updatedCounts[userSelected] || 1) - 1);
-      }
-      updatedCounts[emojiId] = (updatedCounts[emojiId] || 0) + 1;
-      newSelection = emojiId;
-    }
+        setUserSelected((prevSelected) => {
+          if (prevSelected === emojiId) {
+            updatedCounts[emojiId] = Math.max(0, (updatedCounts[emojiId] || 1) - 1);
+            newSelection = null;
+          } else {
+            if (prevSelected) {
+              updatedCounts[prevSelected] = Math.max(0, (updatedCounts[prevSelected] || 1) - 1);
+            }
+            updatedCounts[emojiId] = (updatedCounts[emojiId] || 0) + 1;
+            newSelection = emojiId;
+          }
 
-    setCounts(updatedCounts);
-    setUserSelected(newSelection);
-    setIsPickerOpen(false);
+          // Sync ke Storage di microtask terpisah
+          setTimeout(() => {
+            try {
+              if (newSelection) {
+                localStorage.setItem(`reaction_user_${projectId}`, newSelection);
+              } else {
+                localStorage.removeItem(`reaction_user_${projectId}`);
+              }
+              localStorage.setItem(`reaction_counts_${projectId}`, JSON.stringify(updatedCounts));
+            } catch (e) {}
+          }, 0);
 
-    if (newSelection) {
-      localStorage.setItem(`reaction_user_${projectId}`, newSelection);
-    } else {
-      localStorage.removeItem(`reaction_user_${projectId}`);
-    }
-    localStorage.setItem(`reaction_counts_${projectId}`, JSON.stringify(updatedCounts));
-  };
+          return newSelection;
+        });
 
-  // Filter emoji yang aktif (count > 0 atau sedang dipilih user) & urutkan terbanyak
-  const activeEmojis = EMOJI_LIST.filter((item) => (counts[item.id] || 0) > 0 || userSelected === item.id).sort((a, b) => (counts[b.id] || 0) - (counts[a.id] || 0));
+        return updatedCounts;
+      });
+
+      setIsPickerOpen(false);
+    },
+    [projectId],
+  );
+
+  const activeEmojis = useMemo(() => {
+    return EMOJI_LIST.filter((item) => (counts[item.id] || 0) > 0 || userSelected === item.id).sort((a, b) => (counts[b.id] || 0) - (counts[a.id] || 0));
+  }, [counts, userSelected]);
 
   return (
-    <div className="relative flex items-center gap-1.5 flex-wrap z-20">
-      {/* 1. PILL BADGES EMOJI AKTIF */}
+    <div className="relative flex flex-wrap items-center gap-1.5 z-20">
+      {/* PILL BADGES EMOJI AKTIF */}
       {activeEmojis.map((item) => {
         const isSelected = userSelected === item.id;
         const count = counts[item.id] || 0;
 
         return (
           <div key={item.id} className="relative">
-            <motion.button
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
+            <button
+              type="button"
               onClick={() => handleToggleReaction(item.id)}
               onMouseEnter={() => setActiveTooltip(item.id)}
               onMouseLeave={() => setActiveTooltip(null)}
               className={`
-                flex items-center gap-1.5 rounded-full font-semibold border transition-all duration-200 backdrop-blur-md
-                ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-xs"}
-                ${isSelected ? "border-accent bg-accent/25 text-white shadow-[0_0_12px_rgba(var(--accent-rgb),0.3)]" : "border-white/10 bg-white/5 text-neutral-300 hover:border-white/30 hover:bg-white/10"}
-              `}
+                  flex items-center gap-1.5 rounded-full font-semibold border transition-colors duration-150 active:scale-95
+                  ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-xs"}
+                  ${isSelected ? "border-accent bg-accent/25 text-white" : "border-white/10 bg-slate-900/80 text-neutral-300 hover:border-white/30 hover:bg-slate-800"}
+                `}
             >
               <span className={compact ? "text-xs" : "text-sm"}>{item.emoji}</span>
               <span className="font-mono text-slate-200">{formatCount(count)}</span>
-            </motion.button>
+            </button>
 
             {/* Tooltip Keterangan Emoji */}
-            <AnimatePresence>
-              {activeTooltip === item.id && (
-                <motion.div
-                  initial={{ opacity: 0, y: 4, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 4, scale: 0.9 }}
-                  className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 z-30 pointer-events-none whitespace-nowrap rounded-md border border-white/10 bg-slate-950/90 px-2 py-0.5 text-[10px] text-neutral-200 shadow-md backdrop-blur-md"
-                >
-                  {item.label}
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {activeTooltip === item.id && (
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 z-30 pointer-events-none whitespace-nowrap rounded-md border border-white/10 bg-slate-950 px-2 py-0.5 text-[10px] text-neutral-200 shadow-md">
+                {item.label}
+              </div>
+            )}
           </div>
         );
       })}
 
-      {/* 2. TOMBOL ADD REACTION (+😊) */}
+      {/* TOMBOL ADD REACTION */}
       <div className="relative">
-        <motion.button
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.95 }}
+        <button
+          type="button"
           onClick={() => setIsPickerOpen(!isPickerOpen)}
           className={`
-            flex items-center gap-1 rounded-full border border-white/10 bg-white/5 text-neutral-300
-            hover:border-white/30 hover:bg-white/10 hover:text-white transition-all backdrop-blur-md
-            ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-xs"}
-            ${isPickerOpen ? "border-accent text-accent" : ""}
-          `}
+              flex items-center gap-1 rounded-full border border-white/10 bg-slate-900/80 text-neutral-300
+              hover:border-white/30 hover:bg-slate-800 hover:text-white transition-colors active:scale-95
+              ${compact ? "px-2 py-0.5 text-[10px]" : "px-2.5 py-1 text-xs"}
+              ${isPickerOpen ? "border-accent text-accent" : ""}
+            `}
           title="Add Reaction"
         >
           <Plus size={compact ? 12 : 14} />
           <span className={compact ? "text-xs" : "text-sm"}>😊</span>
-        </motion.button>
+        </button>
 
-        {/* 3. POP-UP EMOJI PICKER */}
+        {/* EMOJI PICKER POPUP */}
         <AnimatePresence>
           {isPickerOpen && (
             <>
               <div className="fixed inset-0 z-40" onClick={() => setIsPickerOpen(false)} />
 
               <motion.div
-                initial={{ opacity: 0, scale: 0.85, y: 8 }}
+                initial={{ opacity: 0, scale: 0.9, y: 5 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.85, y: 8 }}
-                transition={{ duration: 0.15, ease: "easeOut" }}
+                exit={{ opacity: 0, scale: 0.9, y: 5 }}
+                transition={{ duration: 0.1 }}
                 className="
-                  absolute bottom-full left-0 mb-2 z-50
-                  flex items-center gap-1 p-1.5
-                  rounded-full border border-white/20
-                  bg-slate-950/90 shadow-2xl backdrop-blur-2xl
-                "
+                    absolute bottom-full left-0 mb-2 z-50
+                    flex items-center gap-1 p-1.5
+                    rounded-full border border-white/20
+                    bg-slate-950 shadow-2xl
+                  "
               >
                 {EMOJI_LIST.map((item) => (
-                  <div key={item.id} className="relative group">
-                    <button
-                      onClick={() => handleToggleReaction(item.id)}
-                      className={`
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => handleToggleReaction(item.id)}
+                    className={`
                         p-1.5 sm:p-2 rounded-full text-base sm:text-lg leading-none transition-transform hover:scale-125
                         ${userSelected === item.id ? "bg-white/20" : "hover:bg-white/10"}
                       `}
-                    >
-                      {item.emoji}
-                    </button>
-                    {/* Tooltip mini pas picker kebuka */}
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block whitespace-nowrap rounded border border-white/10 bg-slate-900 px-1.5 py-0.5 text-[9px] text-white shadow-md">
-                      {item.label}
-                    </span>
-                  </div>
+                    title={item.label}
+                  >
+                    {item.emoji}
+                  </button>
                 ))}
               </motion.div>
             </>
@@ -185,4 +193,6 @@ export const ProjectReaction = ({ projectId, initialReactions = {}, compact = fa
       </div>
     </div>
   );
-};
+});
+
+ProjectReaction.displayName = "ProjectReaction";
